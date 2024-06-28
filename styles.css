@@ -472,28 +472,32 @@ footer {
 
   /* Fonts */
   h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 2rem 2rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 1rem 2rem;
   }
 
   h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 1rem 2rem;
   }
 
   h4 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
   }
 
   p,
   ul,
   li {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 1rem 2rem;
   }
 
@@ -502,7 +506,7 @@ footer {
   }
 
   .greetingLetter {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .greetingSpace {
@@ -518,13 +522,26 @@ footer {
   /* Scroll Button */
 
   .scroll-down-indicator span {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .arrow {
     width: 1rem;
     height: 1rem;
     border: 0.1rem solid #002efa;
+  }
+
+  /* About Content */
+
+  #aboutContent .columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #aboutContent .left-column,
+  #aboutContent .right-column {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 
   /* Image Grid */
