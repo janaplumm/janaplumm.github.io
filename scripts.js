@@ -7,8 +7,18 @@ document.getElementById("downloadCV").addEventListener("click", function () {
   const link = document.createElement("a");
   link.href = cvFilePath;
   link.download = "Jana-Plumm-CV-2024.pdf";
+
+  // Set the target attribute to '_blank' to open in a new tab/window
+  link.target = "_blank";
+
+  // Append the link to the body and simulate a click
+  document.body.appendChild(link);
   link.click();
+
+  // Clean up: remove the link from the DOM after the click
+  document.body.removeChild(link);
 });
+
 
 // Scroll down animation
 document.addEventListener("DOMContentLoaded", function () {
