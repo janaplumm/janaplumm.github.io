@@ -1,0 +1,645 @@
+/* GLOBAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f8fa;
+}
+
+/* CURSOR */
+/* Code used from https://codepen.io/kjbrum/pen/qooQJJ */
+
+body {
+  cursor: none;
+}
+
+.cursor-dot,
+.cursor-dot-outline {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #002efa;
+}
+
+.cursor-dot-outline {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(182, 180, 180, 0.5);
+}
+
+/* FONTS */
+
+/* Headings H1 and H2 */
+
+h1,
+h2 {
+  font-family: "Pathway Extreme", sans-serif;
+  color: #002efa; /* 7.15:1 contrast checker passes WCAG */
+  background: none;
+  font-size: 6.5rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 6.5rem;
+  margin: 2rem 4rem; /* top and bottom, left and right */
+}
+
+h2 {
+  font-size: 4rem;
+  margin: 1rem 4rem; /* top and bottom, left and right */
+}
+
+/* Headings H3 - H5 and Paragraphs */
+
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  font-family: "Work Sans", sans-serif;
+  color: #282828;
+  background: none;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 1rem 10rem 1rem 4rem; /* top, right, bottom, left */
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 1rem 4rem; /* top and bottom, left and right */
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1rem 4rem; /* top and bottom, left and right */
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 1rem 4rem; /* top and bottom, left and right */
+}
+
+/* List Elements */
+
+ul,
+li {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 1rem 2rem;
+}
+
+/* LINKS */
+
+/* Default link styling */
+a {
+  color: #002efa; /* default link color */
+  background: none;
+  text-decoration: none; /* remove underline */
+  position: relative; /* required for pseudo-element positioning */
+  transition: color 0.3s ease; /* smooth transition for color change */
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  bottom: 0;
+  left: 50%;
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+h3 a::after {
+  height: 0.25rem;
+  background-color: #002efa;
+}
+
+p a::after {
+  height: 0.2rem;
+  background-color: #002efa;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* BUTTONS */
+
+button {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+  margin-right: 2rem;
+}
+
+#downloadCV {
+  background-color: #002efa;
+  color: #f9f8fa;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: background-color 0.3s ease, box-shadow 0.5s ease-in-out,
+    color 0.5s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+#downloadCV:hover {
+  background-color: #f9f8fa;
+  color: #002efa;
+  box-shadow: 0px 0px 0px 2.5px #f9f8fa, 0px 0px 0px 5px #002efa,
+    0px 0px 0px 10px white, 0px 0px 0px 10.5px #002efa;
+}
+
+/* SCROLL DOWN BUTTON */
+
+/* SCROLL DOWN BUTTON */
+
+.scroll-down-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: auto;
+  position: relative;
+}
+
+.scroll-down-indicator {
+  background: none;
+  text-align: center;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down-indicator span {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.125rem;
+  color: #002efa;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.arrow {
+  background: none;
+  width: 2rem;
+  height: 2rem;
+  border: 0.2rem solid #002efa;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  animation: arrow-bounce 2s infinite;
+}
+
+@keyframes arrow-bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* RUBBERBAND EFFECT */
+/* Code used from https://codepen.io/Tiopayo/pen/XxEVoo */
+
+.greeting {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  align-items: center;
+  margin: 2rem 2rem; /* top and bottom, left and right */
+}
+
+.greetingLine {
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center;
+}
+
+.greetingLetter {
+  font-family: "Pathway Extreme", sans-serif;
+  font-size: 6.5rem;
+  font-weight: 600;
+  color: #002efa; /* Initial color */
+  transition: color 0.5s ease; /* Smooth transition for color */
+}
+
+.greetingSpace {
+  margin: 0 1rem; /* Add more space for specific characters */
+}
+
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  20% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  60% {
+    -webkit-transform: scale3d(1.02, 0.98, 1);
+    transform: scale3d(1.02, 0.98, 1);
+  }
+  80% {
+    -webkit-transform: scale3d(0.98, 1.02, 1);
+    transform: scale3d(0.98, 1.02, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  20% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    -ms-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    -ms-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  60% {
+    -webkit-transform: scale3d(1.02, 0.98, 1);
+    -ms-transform: scale3d(1.02, 0.98, 1);
+    transform: scale3d(1.02, 0.98, 1);
+  }
+  80% {
+    -webkit-transform: scale3d(0.98, 1.02, 1);
+    -ms-transform: scale3d(0.98, 1.02, 1);
+    transform: scale3d(0.98, 1.02, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.greetingLetter:hover {
+  -webkit-animation: rubberBand 0.8s both; /* Animation for rubberband effect */
+  animation: rubberBand 0.8s both; /* Animation for rubberband effect */
+}
+
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  justify-content: right;
+  background-color: #f9f8fa;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/* CONTENTS */
+
+/* General */
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+}
+
+.content {
+  width: 100%; /* Adjust width as needed */
+}
+
+/* Header */
+
+#headerWrapper {
+  min-height: 100vh; /* Full viewport height for header */
+}
+
+/* About */
+
+#aboutContent .columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+#aboutContent .left-column,
+#aboutContent .right-column {
+  width: 45%;
+}
+
+#aboutContent .right-column ul {
+  list-style-type: circle;
+}
+
+/* Work */
+
+#workContent {
+  width: 100%; /* Ensure the content section takes up full width */
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #002efa;
+  padding: 2rem 8rem; /* Adjust padding as needed */
+}
+
+#footerContact {
+  background: none;
+  display: flex;
+  justify-content: center;
+}
+
+#footerText,
+#footerAcknowledgment {
+  background: none;
+  text-align: center;
+}
+
+#footerAcknowledgment {
+  font-style: italic;
+}
+
+#footerText p,
+#footerAcknowledgment p {
+  color: #f9f8fa;
+  font-size: 1rem;
+}
+
+#linkedin-logo,
+#email-logo {
+  background: none;
+  height: 2rem; /* Adjust size of the logo */
+  margin: 0rem 0.5rem; /* Adjust logo margin */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+#linkedin-logo:hover,
+#email-logo:hover {
+  transform: scale(1.1); /* Scale the logo on hover */
+}
+
+/* IMAGE GRID */
+
+.grid-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0rem 4rem;
+  margin-bottom: 5rem;
+}
+
+.grid-item {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* Remove margins specifically for paragraphs in the grid items */
+.grid-item p {
+  margin: 0;
+}
+
+.grid-item h4,
+.grid-item h5 {
+  margin: 1rem 0;
+}
+
+.grid-item img {
+  max-width: 100%;
+  transition: transform 0.6s ease; /* Adjusted transition duration for slower effect */
+}
+
+.grid-item img:hover {
+  transform: scale(1.008); /* Slightly smaller scale for more subtle effect */
+}
+
+/* RESPONSIVENESS */
+
+/* Media query for extra small screens (up to 576px) */
+@media only screen and (max-width: 576px) {
+  /* Styles for extra small screens (phones in portrait mode) */
+
+  /* Fonts */
+  h1 {
+    font-size: 3rem;
+    margin: 2rem 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 1rem 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin: 1rem 2rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  p,
+  ul,
+  li {
+    font-size: 0.8rem;
+    margin: 1rem 2rem;
+  }
+
+  .greeting {
+    margin: 1rem 1rem;
+  }
+
+  .greetingLetter {
+    font-size: 3rem;
+  }
+
+  .greetingSpace {
+    margin: 0 0.5rem;
+  }
+
+  /* Links */
+
+  h3 a::after {
+    height: 0.2rem;
+  }
+
+  /* Scroll Button */
+
+  .scroll-down-indicator span {
+    font-size: 0.8rem;
+  }
+
+  .arrow {
+    width: 1rem;
+    height: 1rem;
+    border: 0.1rem solid #002efa;
+  }
+
+  /* Image Grid */
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+
+  footer {
+    padding: 2rem 2rem; /* Further decrease padding */
+  }
+}
+
+/* Media query for small screens (577px to 768px) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  /* Styles for small screens (phones in landscape and small tablets) */
+
+  /* Fonts */
+  h1 {
+    font-size: 4rem;
+    margin: 2rem 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 1rem 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 1rem 2rem;
+  }
+
+  p,
+  ul,
+  li {
+    font-size: 1rem;
+    margin: 1rem 2rem;
+  }
+
+  .greeting {
+    margin: 1rem 0rem;
+  }
+
+  .greetingLetter {
+    font-size: 4rem;
+  }
+
+  .greetingSpace {
+    margin: 0 1rem;
+  }
+
+  /* Scroll Button */
+
+  .scroll-down-indicator span {
+    font-size: 1rem;
+  }
+
+  /* Buttons */
+
+  button {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0.5rem;
+  }
+
+  /* About Content */
+
+  #aboutContent .columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #aboutContent .left-column,
+  #aboutContent .right-column {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  /* Image Grid */
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+
+  footer {
+    padding: 2rem 2rem; /* Further decrease padding */
+  }
+}
+
+/* Media query for medium screens (769px to 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  /* Styles for medium screens (tablets and smaller desktops) */
+
+  /* Image Grid */
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+
+  footer {
+    padding: 2rem 2rem; /* Further decrease padding */
+  }
+}
+
+/* Media query for large screens (993px to 1200px) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  /* Styles for large screens (larger desktops and laptops) */
+  footer {
+    padding: 2rem 2rem; /* Further decrease padding */
+  }
+}
