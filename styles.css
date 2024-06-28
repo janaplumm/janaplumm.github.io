@@ -78,7 +78,7 @@ li {
 h3 {
   font-size: 2rem;
   font-weight: 300;
-  margin: 1rem 10rem 1rem 4rem; /* top, right, bottom, left */
+  margin: 1rem 10rem 2rem 4rem; /* top, right, bottom, left */
 }
 
 h4 {
