@@ -466,6 +466,51 @@ footer {
   transform: scale(1.008); /* Slightly smaller scale for more subtle effect */
 }
 
+/* EXTRA */
+
+/* Container for the images */
+.about-image-container {
+  position: relative; /* Allows positioning of child elements */
+  max-width: 80%; /* Ensures the images do not exceed the column width */
+  margin: auto; /* Centers the container horizontally */
+}
+
+/* Common styles for both images */
+.about-image {
+  width: 100%; /* Ensures the images scale proportionally within the container */
+  height: auto;
+  display: block;
+  position: absolute; /* Allows stacking of images */
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease; /* Smooth transition effect */
+}
+
+/* Default image visible by default */
+.about-image-default {
+  opacity: 1;
+  z-index: 1; /* Ensures the default image is on top */
+}
+
+/* Hover image hidden by default */
+.about-image-hover {
+  opacity: 0;
+  z-index: 0; /* Ensures the hover image is below the default image */
+}
+
+/* Show the hover image on container hover */
+.about-image-container:hover .about-image-hover {
+  opacity: 1;
+  z-index: 1; /* Brings the hover image to the top */
+}
+
+/* Hide the default image on container hover */
+.about-image-container:hover .about-image-default {
+  opacity: 0;
+  z-index: 0; /* Sends the default image to the bottom */
+}
+
+
 /* RESPONSIVENESS */
 
 /* Media query for extra small screens (up to 576px) */
