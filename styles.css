@@ -544,16 +544,17 @@ footer {
     margin-bottom: 2rem;
   }
 
-  /* Image Grid */
-
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-
   /* Footer */
 
   footer {
     padding: 1rem; /* Further decrease padding */
+  }
+
+  /* Image Grid */
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    margin: 0rem 2rem;
   }
 }
 
@@ -623,16 +624,17 @@ footer {
     margin-bottom: 2rem;
   }
 
-  /* Image Grid */
-
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-
   /* Footer */
 
   footer {
     padding: 1rem; /* Further decrease padding */
+  }
+
+  /* Image Grid */
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    margin: 0rem 2rem;
   }
 }
 
