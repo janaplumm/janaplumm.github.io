@@ -440,8 +440,7 @@ footer {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
-  margin: 0rem 4rem;
-  margin-bottom: 5rem;
+  margin: 0rem 4rem 4rem 4rem;
 }
 
 .grid-item {
