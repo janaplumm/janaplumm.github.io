@@ -362,6 +362,10 @@ nav {
 
 /* About */
 
+#aboutWrapper {
+  height: 80vh;
+}
+
 #aboutContent .columns {
   display: flex;
   flex-wrap: wrap;
