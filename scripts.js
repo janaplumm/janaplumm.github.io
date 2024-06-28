@@ -3,12 +3,9 @@ document.getElementById("downloadCV").addEventListener("click", function () {
   // Path to your CV file
   const cvFilePath = "cv/Jana-Plumm-CV-2024.pdf";
 
-  // Create an 'a' element and simulate a click to download the file
+  // Create an 'a' element to open the file in a new tab
   const link = document.createElement("a");
   link.href = cvFilePath;
-  link.download = "Jana-Plumm-CV-2024.pdf";
-
-  // Set the target attribute to '_blank' to open in a new tab/window
   link.target = "_blank";
 
   // Append the link to the body and simulate a click
@@ -18,6 +15,7 @@ document.getElementById("downloadCV").addEventListener("click", function () {
   // Clean up: remove the link from the DOM after the click
   document.body.removeChild(link);
 });
+
 
 
 // Scroll down animation
@@ -38,17 +36,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (opacity <= 0) {
             clearInterval(intervalId);
-            scrollIndicator.style.display = "none"; // Hide the indicator after fading out
+            scrollIndicator.style.visibility = "hidden"; // Hide the indicator after fading out
           }
         }, 50); // Adjust the interval duration for smoother animation
       } else if (window.scrollY <= 100) {
         scrollIndicator.style.opacity = "1";
-        scrollIndicator.style.display = "block"; // Show the indicator when scrolling back up
+        scrollIndicator.style.visibility = "visible"; // Show the indicator when scrolling back up
         fadingOut = false; // Reset the flag
       }
     });
   }
-}); 
+});
+
 
 // Custom cursor
 document.addEventListener("DOMContentLoaded", (event) => {
