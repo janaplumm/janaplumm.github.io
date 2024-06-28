@@ -78,7 +78,7 @@ li {
 h3 {
   font-size: 2rem;
   font-weight: 300;
-  margin: 1rem 6rem 2rem 4rem; /* top, right, bottom, left */
+  margin: 1rem 12rem 2rem 4rem; /* top, right, bottom, left */
 }
 
 h4 {
@@ -643,6 +643,12 @@ footer {
 @media only screen and (min-width: 769px) and (max-width: 992px) {
   /* Styles for medium screens (tablets and smaller desktops) */
 
+    /* Fonts */
+
+    h3 {
+      margin: 1rem 6rem 2rem 4rem; /* top, right, bottom, left */
+    }
+
   /* Image Grid */
 
   .grid-container {
@@ -659,6 +665,15 @@ footer {
 /* Media query for large screens (993px to 1200px) */
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
   /* Styles for large screens (larger desktops and laptops) */
+
+  /* Fonts */
+
+  h3 {
+    margin: 1rem 6rem 2rem 4rem; /* top, right, bottom, left */
+  }
+
+  /* Footer */
+
   footer {
     padding: 2rem 2rem; /* Further decrease padding */
   }
