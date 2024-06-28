@@ -16,8 +16,6 @@ document.getElementById("downloadCV").addEventListener("click", function () {
   document.body.removeChild(link);
 });
 
-
-
 // Scroll down animation
 document.addEventListener("DOMContentLoaded", function () {
   var scrollIndicator = document.querySelector(".scroll-down-indicator");
@@ -47,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
 
 // Custom cursor
 document.addEventListener("DOMContentLoaded", (event) => {

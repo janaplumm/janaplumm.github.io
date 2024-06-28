@@ -105,7 +105,7 @@ ul,
 li {
   font-size: 1.125rem;
   font-weight: 400;
-  margin: 1rem 2rem;
+  margin: 1rem 2.5rem;
 }
 
 /* LINKS */
@@ -361,7 +361,7 @@ nav {
 /* About */
 
 #aboutWrapper {
-  height: 80vh;
+  min-height: 80vh;
 }
 
 #aboutContent .columns {
@@ -373,7 +373,8 @@ nav {
 
 #aboutContent .left-column,
 #aboutContent .right-column {
-  width: 45%;
+  width: 48%; /* Adjust width as needed */
+  margin-bottom: 2rem;
 }
 
 #aboutContent .right-column ul {
@@ -532,17 +533,24 @@ footer {
     border: 0.1rem solid #002efa;
   }
 
-  /* About Content */
+  /* About */
 
   #aboutContent .columns {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack columns vertically */
   }
 
   #aboutContent .left-column,
   #aboutContent .right-column {
-    width: 100%;
-    margin-bottom: 2rem;
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  #aboutContent .left-column {
+    order: 1; /* Ensure left column comes first */
+  }
+
+  #aboutContent .right-column {
+    order: 2; /* Ensure right column comes second */
+    margin-top: 1rem; /* Add space between columns */
   }
 
   /* Footer */
@@ -612,17 +620,24 @@ footer {
     margin: 1rem 0.5rem;
   }
 
-  /* About Content */
+  /* About */
 
   #aboutContent .columns {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack columns vertically */
   }
 
   #aboutContent .left-column,
   #aboutContent .right-column {
-    width: 100%;
-    margin-bottom: 2rem;
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  #aboutContent .left-column {
+    order: 1; /* Ensure left column comes first */
+  }
+
+  #aboutContent .right-column {
+    order: 2; /* Ensure right column comes second */
+    margin-top: 1rem; /* Add space between columns */
   }
 
   /* Footer */
@@ -643,16 +658,36 @@ footer {
 @media only screen and (min-width: 769px) and (max-width: 992px) {
   /* Styles for medium screens (tablets and smaller desktops) */
 
-    /* Fonts */
+  /* Fonts */
 
-    h3 {
-      margin: 1rem 6rem 2rem 4rem; /* top, right, bottom, left */
-    }
+  h3 {
+    margin: 1rem 6rem 2rem 4rem; /* top, right, bottom, left */
+  }
 
   /* Image Grid */
 
   .grid-container {
     grid-template-columns: 1fr;
+  }
+
+  /* About */
+
+  #aboutContent .columns {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  #aboutContent .left-column,
+  #aboutContent .right-column {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  #aboutContent .left-column {
+    order: 1; /* Ensure left column comes first */
+  }
+
+  #aboutContent .right-column {
+    order: 2; /* Ensure right column comes second */
+    margin-top: 1rem; /* Add space between columns */
   }
 
   /* Footer */
