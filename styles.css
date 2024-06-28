@@ -505,7 +505,7 @@ footer {
   }
 
   .greeting {
-    margin: 1rem 1rem;
+    margin: 1rem 1rem 2rem 1rem;
   }
 
   .greetingLetter {
@@ -589,7 +589,7 @@ footer {
   }
 
   .greeting {
-    margin: 1rem 0rem;
+    margin: 1rem 1rem 2rem 0rem;
   }
 
   .greetingLetter {
