@@ -78,7 +78,7 @@ li {
 h3 {
   font-size: 2rem;
   font-weight: 300;
-  margin: 1rem 10rem 2rem 4rem; /* top, right, bottom, left */
+  margin: 1rem 6rem 2rem 4rem; /* top, right, bottom, left */
 }
 
 h4 {
@@ -484,7 +484,7 @@ footer {
 
   h3 {
     font-size: 1.5rem;
-    margin: 1rem 2rem;
+    margin: 1rem 4rem 1rem 2rem;
   }
 
   h4 {
@@ -576,7 +576,7 @@ footer {
 
   h3 {
     font-size: 1.5rem;
-    margin: 1rem 2rem;
+    margin: 1rem 4rem 1rem 2rem;
   }
 
   p,
