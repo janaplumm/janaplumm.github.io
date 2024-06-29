@@ -118,16 +118,20 @@ a {
   text-decoration: none; /* remove underline */
   position: relative; /* required for pseudo-element positioning */
   transition: color 0.3s ease; /* smooth transition for color change */
+  display: inline-block; /* prevent links from breaking across lines */
 }
 
 a::after {
   content: "";
   position: absolute;
-  width: 0%;
+  width: 100%; /* extend line across the entire width */
   bottom: 0;
-  left: 50%;
+  left: 0;
+  height: 0.2rem; /* adjust height as needed */
+  background-color: #002efa;
   transition: width 0.3s ease;
-  transform: translateX(-50%);
+  transform: scaleX(0); /* start with no width */
+  transform-origin: center left;
 }
 
 h3 a::after {
@@ -141,7 +145,7 @@ p a::after {
 }
 
 a:hover::after {
-  width: 100%;
+  transform: scaleX(1); /* expand line to full width on hover */
 }
 
 /* BUTTONS */
