@@ -525,6 +525,7 @@ footer {
   width: 100%;
   max-width: 100%;
   text-align: center; /* Optional: Centers the image horizontally */
+  margin-bottom: -1rem;
 }
 
 .divider img {
@@ -627,6 +628,12 @@ footer {
     margin-top: -0.5rem;
   }
 
+  /* Divider */
+
+  .divider {
+    margin-bottom: -0.5rem;
+  }
+
   /* Image Grid */
 
   .grid-container {
@@ -715,6 +722,12 @@ footer {
     margin-top: -0.5rem;
   }
 
+  /* Divider */
+
+  .divider {
+  margin-bottom: -0.5rem;
+}
+
   /* Image Grid */
 
   .grid-container {
@@ -765,6 +778,12 @@ footer {
     padding: 2rem 2rem; /* Further decrease padding */
     margin-top: -0.5rem;
   }
+
+    /* Divider */
+
+    .divider {
+      margin-bottom: -0.5rem;
+    }
 }
 
 /* Media query for large screens (993px to 1200px) */
@@ -783,4 +802,10 @@ footer {
     padding: 2rem 2rem; /* Further decrease padding */
     margin-top: -0.5rem;
   }
+
+    /* Divider */
+
+    .divider {
+      margin-bottom: -0.5rem;
+    }
 }
