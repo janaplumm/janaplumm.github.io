@@ -1,27 +1,3 @@
-// Images preload 
-const imagesToPreload = [
-  'images/about-usyd-blue-small.png',
-  'images/about-usyd-color-small.png',
-  'images/berliner-doner.png',
-  'images/divider-wave-5.png',
-  'images/divider-wave-6.png',
-  'images/divider-wave-7.png',
-  'images/haus.png',
-  'images/jigsol.png',
-  'images/kasi.png',
-  'images/levelup.png',
-  'images/msf-campaign.png'
-];
-
-function preloadImages() {
-  imagesToPreload.forEach(imageUrl => {
-      const img = new Image();
-      img.src = imageUrl;
-  });
-}
-
-window.onload = preloadImages;
-
 // Download CV button
 document.getElementById("downloadCV").addEventListener("click", function () {
   // Path to your CV file
