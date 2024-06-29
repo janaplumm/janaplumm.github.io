@@ -448,7 +448,7 @@ footer {
   justify-content: center;
   background: #002efa;
   padding: 2rem 8rem; /* Adjust padding as needed */
-  margin-top: -0.2rem; /* Removes tiny visible line */
+  margin-top: -1rem;
 }
 
 #footerContact {
@@ -624,6 +624,7 @@ footer {
 
   footer {
     padding: 1rem; /* Further decrease padding */
+    margin-top: -0.5rem;
   }
 
   /* Image Grid */
@@ -711,6 +712,7 @@ footer {
 
   footer {
     padding: 1rem; /* Further decrease padding */
+    margin-top: -0.5rem;
   }
 
   /* Image Grid */
@@ -761,6 +763,7 @@ footer {
 
   footer {
     padding: 2rem 2rem; /* Further decrease padding */
+    margin-top: -0.5rem;
   }
 }
 
@@ -778,5 +781,6 @@ footer {
 
   footer {
     padding: 2rem 2rem; /* Further decrease padding */
+    margin-top: -0.5rem;
   }
 }
