@@ -1,4 +1,5 @@
-// Download CV button
+// DOWNLOAD CV BUTTON
+
 document.getElementById("downloadCV").addEventListener("click", function () {
   // Path to your CV file
   const cvFilePath = "cv/Jana-Plumm-CV-2024.pdf";
@@ -16,19 +17,19 @@ document.getElementById("downloadCV").addEventListener("click", function () {
   document.body.removeChild(link);
 });
 
-// Scroll down animation
+// SCROLL DOWN ANIMATION INDICATOR
 document.addEventListener("DOMContentLoaded", function () {
-  var scrollIndicator = document.querySelector(".scroll-down-indicator");
+  const scrollIndicator = document.querySelector(".scroll-down-indicator");
 
   if (scrollIndicator) {
-    var fadingOut = false; // Flag to track if fade-out animation is already in progress
+    let fadingOut = false; // Flag to track if fade-out animation is already in progress
 
     window.addEventListener("scroll", function () {
       if (!fadingOut && window.scrollY > 100) {
         // Adjust the scroll position threshold as needed
         fadingOut = true; // Start fade-out animation
-        var opacity = 1;
-        var intervalId = setInterval(function () {
+        let opacity = 1;
+        const intervalId = setInterval(function () {
           opacity -= 0.1; // Adjust the decrement value for smoother or quicker fade-out
           scrollIndicator.style.opacity = opacity;
 
@@ -46,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Custom cursor
+// CUSTOM CURSOR
 document.addEventListener("DOMContentLoaded", (event) => {
-  var cursor = {
+  const cursor = {
     delay: 8,
     _x: 0,
     _y: 0,
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     },
 
     setupEventListeners: function () {
-      var self = this;
+      const self = this;
 
       document.querySelectorAll("a").forEach(function (el) {
         el.addEventListener("mouseover", function () {
@@ -116,7 +117,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     },
 
     animateDotOutline: function () {
-      var self = this;
+      const self = this;
       self._x += (self.endX - self._x) / self.delay;
       self._y += (self.endY - self._y) / self.delay;
       self.$outline.style.top = self._y + "px";
@@ -125,7 +126,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     },
 
     toggleCursorSize: function () {
-      var self = this;
+      const self = this;
       if (self.cursorEnlarged) {
         self.$dot.style.transform = "translate(-50%, -50%) scale(0.75)";
         self.$outline.style.transform = "translate(-50%, -50%) scale(1.5)";
@@ -136,7 +137,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     },
 
     toggleCursorVisibility: function () {
-      var self = this;
+      const self = this;
       if (self.cursorVisible) {
         self.$dot.style.opacity = 1;
         self.$outline.style.opacity = 1;
@@ -150,11 +151,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
   cursor.init();
 });
 
-// Rubberband effect
+// RUBBERBAND EFFECT
 document.addEventListener("DOMContentLoaded", function () {
-  var squares = document.getElementsByClassName("greetingLetter");
+  const squares = document.getElementsByClassName("greetingLetter");
 
-  for (var i = 0; i < squares.length; i++) {
+  for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener("mouseenter", function () {
       this.classList.add("rubberBand");
       this.addEventListener(

@@ -28,14 +28,14 @@ body {
 }
 
 .cursor-dot {
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: #002efa;
 }
 
 .cursor-dot-outline {
-  width: 40px;
-  height: 40px;
+  width: 3rem;
+  height: 3rem;
   background-color: rgba(182, 180, 180, 0.5);
 }
 
@@ -109,11 +109,25 @@ li {
   margin: 1rem 2.5rem;
 }
 
+/* DIVIDER */
+
+.divider {
+  width: 100%;
+  max-width: 100%;
+  text-align: center; 
+}
+
+.divider img {
+  width: 100%;
+  height: auto;
+  display: block; 
+}
+
 /* LINKS */
 
 /* Default link styling */
 a {
-  color: #002efa; /* default link color */
+  color: #002efa; 
   background: none;
   text-decoration: none; /* remove underline */
   position: relative; /* required for pseudo-element positioning */
@@ -179,7 +193,7 @@ button {
     0px 0px 0px 10px white, 0px 0px 0px 10.5px #002efa;
 }
 
-/* SCROLL DOWN BUTTON */
+/* SCROLL DOWN INDICATOR */
 
 .scroll-down-container {
   display: flex;
@@ -231,7 +245,7 @@ button {
   }
 }
 
-/* RUBBERBAND EFFECT */
+/* TITLE RUBBERBAND EFFECT */
 /* Code used from https://codepen.io/Tiopayo/pen/XxEVoo */
 
 .greeting {
@@ -386,19 +400,17 @@ nav {
   list-style-type: circle;
 }
 
-/* About images */
+/* About Images */
 
-/* Container for the images */
 .about-image-container {
   position: relative; /* Allows positioning of child elements */
-  width: 100%; /* Ensures the container takes up the full width of the column */
-  max-width: 80%; /* Ensures the images do not exceed the column width */
+  width: 100%; 
+  max-width: 80%; 
   margin: auto; /* Centers the container horizontally */
   padding-top: 100%; /* Maintains aspect ratio */
   overflow: hidden; /* Ensures images do not overflow the container */
 }
 
-/* Common styles for both images */
 .about-image {
   position: absolute; /* Stacks the images on top of each other */
   top: 0;
@@ -499,9 +511,8 @@ footer {
   margin-bottom: 2rem;
 }
 
-/* Remove margins specifically for paragraphs in the grid items */
 .grid-item p {
-  margin: 0;
+  margin: 0; /* Remove margins specifically for paragraphs in the grid items */
 }
 
 .grid-item h4,
@@ -518,20 +529,6 @@ footer {
   transform: scale(1.008); /* Slightly smaller scale for more subtle effect */
 }
 
-/* EXTRA */
-
-.divider {
-  width: 100%;
-  max-width: 100%;
-  text-align: center; /* Optional: Centers the image horizontally */
-}
-
-.divider img {
-  width: 100%;
-  height: auto;
-  display: block; /* Ensures image behaves like a block element */
-}
-
 /* RESPONSIVENESS */
 
 /* Media query for extra small screens (up to 576px) */
@@ -539,6 +536,7 @@ footer {
   /* Styles for extra small screens (phones in portrait mode) */
 
   /* Fonts */
+
   h1 {
     font-size: 4rem;
     margin: 2rem 2rem;
@@ -589,8 +587,8 @@ footer {
 
   /* Scroll Button */
 
-  .scroll-down-indicator span {
-    font-size: 1rem;
+  .scroll-down-indicator {
+    display: none; /* Remove scroll down indicator on mobile view */
   }
 
   .arrow {
@@ -638,6 +636,7 @@ footer {
   /* Styles for small screens (phones in landscape and small tablets) */
 
   /* Fonts */
+
   h1 {
     font-size: 4rem;
     margin: 2rem 2rem;
@@ -674,8 +673,8 @@ footer {
 
   /* Scroll Button */
 
-  .scroll-down-indicator span {
-    font-size: 1rem;
+  .scroll-down-indicator {
+    display: none; /* Remove scroll down indicator on mobile view */
   }
 
   /* Buttons */
