@@ -1,2 +1,3 @@
 # janaplumm.github.io
-Portfolio
+This is my personal portfolio website. 
+The code is commented and references external sources or inspirations. 
