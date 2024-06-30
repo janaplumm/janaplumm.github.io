@@ -440,7 +440,7 @@ nav {
   left: 0;
   width: 100%; /* Ensures the images scale proportionally within the container */
   height: 100%;
-  object-fit: cover; /* Ensures the images cover the container area */
+  object-fit:contain; /* Ensures the images cover the container area */
   transition: opacity 0.4s ease-in-out; /* Smooth transition effect */
 }
 
@@ -466,6 +466,12 @@ nav {
 .about-image-container:hover .about-image-default {
   opacity: 0;
   z-index: 0; /* Sends the default image to the bottom */
+}
+
+.about-image-caption p {
+  margin: 0rem 8rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
 /* Work */
