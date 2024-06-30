@@ -24,7 +24,7 @@
   padding: 1rem;
   z-index: 100;
   transition: top 0.3s;
-} 
+}
 
 .skip-link:focus {
   top: 2rem;
@@ -137,20 +137,20 @@ li {
 .divider {
   width: 100%;
   max-width: 100%;
-  text-align: center; 
+  text-align: center;
 }
 
 .divider img {
   width: 100%;
   height: auto;
-  display: block; 
+  display: block;
 }
 
 /* LINKS */
 
 /* Default link styling */
 a {
-  color: #002efa; 
+  color: #002efa;
   background: none;
   text-decoration: none; /* remove underline */
   position: relative; /* required for pseudo-element positioning */
@@ -427,8 +427,8 @@ nav {
 
 .about-image-container {
   position: relative; /* Allows positioning of child elements */
-  width: 100%; 
-  max-width: 80%; 
+  width: 100%;
+  max-width: 80%;
   margin: auto; /* Centers the container horizontally */
   padding-top: 100%; /* Maintains aspect ratio */
   overflow: hidden; /* Ensures images do not overflow the container */
@@ -440,7 +440,7 @@ nav {
   left: 0;
   width: 100%; /* Ensures the images scale proportionally within the container */
   height: 100%;
-  object-fit:contain; /* Ensures the images cover the container area */
+  object-fit: contain; /* Ensures the images cover the container area */
   transition: opacity 0.4s ease-in-out; /* Smooth transition effect */
 }
 
@@ -649,17 +649,18 @@ footer {
   .about-image-caption p {
     margin: 0rem 4rem;
 
-  /* Footer */
+    /* Footer */
 
-  footer {
-    padding: 1rem; /* Further decrease padding */
-  }
+    footer {
+      padding: 1rem; /* Further decrease padding */
+    }
 
-  /* Image Grid */
+    /* Image Grid */
 
-  .grid-container {
-    grid-template-columns: 1fr;
-    margin: 0rem 2rem 4rem 2rem;
+    .grid-container {
+      grid-template-columns: 1fr;
+      margin: 0rem 2rem 4rem 2rem;
+    }
   }
 }
 
