@@ -584,6 +584,17 @@ footer {
 @media only screen and (max-width: 576px) {
   /* Styles for extra small screens (phones in portrait mode) */
 
+  /* Cursor */
+
+  .cursor-dot,
+  .cursor-dot-outline {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+
   /* Fonts */
 
   h1 {
@@ -691,6 +702,17 @@ footer {
 /* Media query for small screens (577px to 768px) */
 @media only screen and (min-width: 577px) and (max-width: 768px) {
   /* Styles for small screens (phones in landscape and small tablets) */
+
+  /* Cursor */
+
+  .cursor-dot,
+  .cursor-dot-outline {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
 
   /* Fonts */
 
