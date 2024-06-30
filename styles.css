@@ -646,6 +646,9 @@ footer {
     margin-top: 1rem; /* Add space between columns */
   }
 
+  .about-image-caption p {
+    margin: 0rem 4rem;
+
   /* Footer */
 
   footer {
