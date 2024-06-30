@@ -648,19 +648,18 @@ footer {
 
   .about-image-caption p {
     margin: 0rem 4rem;
+  }
+  /* Footer */
 
-    /* Footer */
+  footer {
+    padding: 1rem; /* Further decrease padding */
+  }
 
-    footer {
-      padding: 1rem; /* Further decrease padding */
-    }
+  /* Image Grid */
 
-    /* Image Grid */
-
-    .grid-container {
-      grid-template-columns: 1fr;
-      margin: 0rem 2rem 4rem 2rem;
-    }
+  .grid-container {
+    grid-template-columns: 1fr;
+    margin: 0rem 2rem 4rem 2rem;
   }
 }
 
