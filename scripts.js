@@ -18,6 +18,7 @@ document.getElementById("downloadCV").addEventListener("click", function () {
 });
 
 // SCROLL DOWN ANIMATION INDICATOR
+
 document.addEventListener("DOMContentLoaded", function () {
   const scrollIndicator = document.querySelector(".scroll-down-indicator");
 
@@ -47,7 +48,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// SCROLL DOWN REVEAL EFFECT
+
+document.addEventListener('DOMContentLoaded', () => {
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 50) {
+              element.classList.add('active');
+          }
+      });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll(); // Run on initial load
+});
+
+
 // CUSTOM CURSOR
+
 document.addEventListener("DOMContentLoaded", (event) => {
   const cursor = {
     delay: 8,
@@ -152,9 +174,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 // RUBBERBAND EFFECT
+
 document.addEventListener("DOMContentLoaded", function () {
   const squares = document.getElementsByClassName("greetingLetter");
 
+  // Function to add the animation class with a delay
+  function addAnimationWithDelay(element, delay) {
+    setTimeout(function () {
+      element.classList.add("rubberBand");
+      element.addEventListener(
+        "animationend",
+        function () {
+          this.classList.remove("rubberBand");
+        },
+        false
+      );
+    }, delay);
+  }
+
+  // Add animation sequentially with a delay
+  for (let i = 0; i < squares.length; i++) {
+    addAnimationWithDelay(squares[i], i * 100); // Adjust the delay (100ms) as needed
+  }
+
+  // Hover animation (already existing)
   for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener("mouseenter", function () {
       this.classList.add("rubberBand");
