@@ -50,23 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // SCROLL DOWN REVEAL EFFECT
 
-document.addEventListener('DOMContentLoaded', () => {
-  const revealElements = document.querySelectorAll('.reveal');
+document.addEventListener("DOMContentLoaded", () => {
+  const revealElements = document.querySelectorAll(".reveal");
 
   const revealOnScroll = () => {
-      const windowHeight = window.innerHeight;
-      revealElements.forEach(element => {
-          const elementTop = element.getBoundingClientRect().top;
-          if (elementTop < windowHeight - 50) {
-              element.classList.add('active');
-          }
-      });
+    const windowHeight = window.innerHeight;
+    revealElements.forEach((element) => {
+      const elementTop = element.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 50) {
+        element.classList.add("active");
+      }
+    });
   };
 
-  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener("scroll", revealOnScroll);
   revealOnScroll(); // Run on initial load
 });
-
 
 // CUSTOM CURSOR
 
@@ -173,7 +172,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   cursor.init();
 });
 
-// RUBBERBAND EFFECT
+// GREETING ANIMATION LOAD AND RUBBERBAND EFFECT
 
 document.addEventListener("DOMContentLoaded", function () {
   const squares = document.getElementsByClassName("greetingLetter");
