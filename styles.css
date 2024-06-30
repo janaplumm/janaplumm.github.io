@@ -7,6 +7,29 @@
   background-color: #f9f8fa;
 }
 
+/* ACCESSIBILITY */
+
+:focus {
+  outline: 0.2rem solid #002efa; /* Customize to match your design */
+  outline-offset: 0.1rem;
+}
+
+.skip-link {
+  font-family: "Work Sans", sans-serif;
+  position: absolute;
+  top: -4rem;
+  left: 4rem;
+  background: #f9f8fa;
+  color: #002efa;
+  padding: 1rem;
+  z-index: 100;
+  transition: top 0.3s;
+} 
+
+.skip-link:focus {
+  top: 2rem;
+}
+
 /* CURSOR */
 /* Code used from https://codepen.io/kjbrum/pen/qooQJJ */
 
