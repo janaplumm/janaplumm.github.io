@@ -1,3 +1,15 @@
+// ACCESSIBILITY FOR USERS USING KEYBOARD
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Tab' || e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+    document.body.classList.add('user-is-tabbing');
+  }
+});
+
+document.addEventListener('mousedown', function() {
+  document.body.classList.remove('user-is-tabbing');
+});
+
 // DOWNLOAD CV BUTTON
 
 document.getElementById("downloadCV").addEventListener("click", function () {
