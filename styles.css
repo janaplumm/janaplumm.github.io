@@ -623,39 +623,63 @@ footer {
 
 /* COLLAPSIBLES */
 
+.collapsible-section {
+  display: flex;
+  flex-direction: column;
+}
+
 .collapsible-button {
-  background-color: #f9f8fa;
-  color: #002efa;
-  text-align: left;
-  font-size: 18px;
   cursor: pointer;
-  width: 100%;
+  background-color: #f9f8fa;
   border: solid 0.2rem #002efa;
-  padding: 1rem;
-  margin: 0rem 4rem;
+  color: #282828;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 300;
+  max-width: 100%;
+  margin: 1rem 4rem;
   transition: 0.4s;
 }
 
+/* Change background color when active or hovered */
 .collapsible-button.active, .collapsible-button:hover {
   background-color: #002efa;
   color: #f9f8fa;
 }
 
+.collapsible-button:before {
+  content: "\002B"; /* Unicode for plus sign */
+  color: #282828;
+  font-weight: 300;
+}
+
+.collapsible-button.active:before {
+  content: "\2212"; /* Unicode for minus sign */
+  color: #f9f8fa;
+  font-weight: 300;
+}
+
+.collapsible-button:hover:before {
+  color: #f9f8fa; 
+}
+
+/* Style for collapsible content */
 .collapisble-content {
-  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #f9f8fa;
-  margin: 1rem 0rem;
+  margin: 0rem 1rem;
 }
 
 .collapsible-section img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 1rem 4rem;
 }
+
+
 
 /* RESPONSIVENESS */
 
