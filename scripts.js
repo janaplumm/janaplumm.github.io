@@ -10,9 +10,15 @@ document.addEventListener('mousedown', function() {
   document.body.classList.remove('user-is-tabbing');
 });
 
+// TAKE ME HOME BUTTON
+
+document.getElementById('return-home').addEventListener('click', function() {
+  window.location.href = '/';
+});
+
 // DOWNLOAD CV BUTTON
 
-document.getElementById("downloadCV").addEventListener("click", function () {
+document.getElementById("download-CV").addEventListener("click", function () {
   // Path to your CV file
   const cvFilePath = "cv/Jana-Plumm-CV-2024.pdf";
 

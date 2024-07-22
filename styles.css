@@ -173,6 +173,7 @@ a:hover::after {
 
 /* BUTTONS */
 
+/* General button */
 button {
   font-family: "Work Sans", sans-serif;
   font-size: 1rem;
@@ -181,7 +182,8 @@ button {
   margin: 0 2rem 0 2rem; /* top 0, right 2rem, bottom 0, left 0 */
 }
 
-#downloadCV {
+/* Download CV button */
+#download-CV {
   background-color: #002efa;
   color: #f9f8fa;
   border: none;
@@ -194,14 +196,15 @@ button {
   overflow: hidden;
 }
 
-#downloadCV:hover {
+#download-CV:hover {
   background-color: #f9f8fa;
   color: #002efa;
   box-shadow: 0px 0px 0px 2.5px #f9f8fa, 0px 0px 0px 5px #002efa,
     0px 0px 0px 10px white, 0px 0px 0px 10.5px #002efa;
 }
 
-#returnHome {
+/* Common styles for buttons */
+#return-home, #next-project {
   background-color: #f9f8fa;
   color: #002efa;
   border: solid #002efa;
@@ -209,12 +212,13 @@ button {
   cursor: pointer;
   border-radius: 2rem;
   transition: background-color 0.3s ease, box-shadow 0.5s ease-in-out,
-    color 0.5s ease-in-out, padding-left 0.3s ease;
+    color 0.5s ease-in-out, padding-left 0.3s ease, padding-right 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-#returnHome::before {
+/* Return Home button */
+#return-home::before {
   content: '\2190'; /* Unicode character for left arrow */
   font-size: 1.5rem; 
   position: absolute;
@@ -226,7 +230,7 @@ button {
   opacity: 0; /* Initially hidden */
 }
 
-#returnHome:hover {
+#return-home:hover {
   background-color: #002efa;
   color: #f9f8fa;
   box-shadow: 0px 0px 0px 2.5px #002efa, 0px 0px 0px 5px #f9f8fa,
@@ -234,9 +238,35 @@ button {
   padding-left: 3rem; /* Increased padding to make room for the arrow */
 }
 
-#returnHome:hover::before {
+#return-home:hover::before {
   opacity: 1; /* Show the arrow on hover */
   left: 1rem; /* Adjust position when visible */
+}
+
+/* Next Project button */
+#next-project::before {
+  content: '\2192'; /* Unicode character for right arrow */
+  font-size: 1.5rem; 
+  position: absolute;
+  right: 0.5rem; /* Space from the right edge */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f9f8fa;
+  transition: opacity 0.3s ease, right 0.3s ease; /* Smooth transition for visibility and positioning */
+  opacity: 0; /* Initially hidden */
+}
+
+#next-project:hover {
+  background-color: #002efa;
+  color: #f9f8fa;
+  box-shadow: 0px 0px 0px 2.5px #002efa, 0px 0px 0px 5px #f9f8fa,
+    0px 0px 0px 10px #002efa, 0px 0px 0px 10.5px #f9f8fa;
+  padding-right: 3rem; /* Increased padding to make room for the arrow */
+}
+
+#next-project:hover::before {
+  opacity: 1; /* Show the arrow on hover */
+  right: 1rem; /* Adjust position when visible */
 }
 
 /* SCROLL DOWN INDICATOR */
@@ -408,9 +438,9 @@ button {
 
 nav {
   display: flex;
-  background-color: #f9f8fa;
   margin: 1rem;
   padding: 1rem;
+  justify-content: space-between;
 }
 
 #navHome {
@@ -418,12 +448,8 @@ nav {
 }
 
 /* Hide the returnHome button on the index page without affecting layout */
-#navHome #returnHome {
+#navHome #return-home {
   visibility: hidden;
-}
-
-#navCS {
-  justify-content: space-between;
 }
 
 /* HOME CONTENTS */
@@ -695,9 +721,8 @@ footer {
   max-width: 100%;
   height: auto;
   display: block;
+  margin: 0rem 4rem;
 }
-
-
 
 /* RESPONSIVENESS */
 
