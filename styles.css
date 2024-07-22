@@ -849,6 +849,12 @@ footer {
   .tags {
     gap: 0.5rem;
   }
+
+  /* Collapsibles */
+
+  .collapsible-button {
+    margin: 1rem 2rem;
+  }
 }
 
 /* Media query for small screens (577px to 768px) */
@@ -948,6 +954,12 @@ footer {
     grid-template-columns: 1fr;
     margin: 0rem 2rem 4rem 2rem;
   }
+
+  /* Collapsibles */
+
+   .collapsible-button {
+    margin: 1rem 2rem;
+    }
 }
 
 /* Media query for medium screens (769px to 992px) */
