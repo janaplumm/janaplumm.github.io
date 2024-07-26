@@ -466,7 +466,7 @@ nav {
 }
 
 /* Hide the returnHome button on the index page without affecting layout */
-#navHome #return-home {
+#index-return-home {
   visibility: hidden;
 }
 
@@ -842,10 +842,6 @@ footer {
   button {
     margin: 0;
     padding: 0.8rem 0.6rem;
-  }
-
-  #index-downloadCV {
-    padding: 0.894rem;
   }
 
   /* Scroll Button */

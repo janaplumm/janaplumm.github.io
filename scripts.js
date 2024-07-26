@@ -18,14 +18,6 @@ document.querySelectorAll('.return-home').forEach(button => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Check if the current page is the index page
-  if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
-      // Hide the 'Take me home' button using its ID
-      document.getElementById("index-return-home").style.display = "none";
-  }
-});
-
 // DOWNLOAD CV BUTTON
 
 document.querySelector(".download-CV").addEventListener("click", function () {
