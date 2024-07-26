@@ -743,8 +743,11 @@ footer {
 
 .collapsible-image img {
   width: 100%; /* Fills the width of the container */
-  height: auto; /* Maintains aspect ratio */
-  display: block; /* Removes extra space below the image */
+  height: auto;
+}
+
+#collapsible-image-vertical {
+  width: 50%;
 }
 
 .collapsible-images {
@@ -756,7 +759,7 @@ footer {
 
 .collapsible-images img {
   width: 100%; /* Fills the width of the container */
-  height: auto; /* Maintains aspect ratio */
+  height: auto;
 }
 
 /* Style for collapsible content videos */
@@ -907,6 +910,10 @@ footer {
     margin: 1rem 2rem;
   }
 
+  #collapsible-image-vertical {
+    width: 100%;
+  }
+
   .collapsible-images {
     margin: 1rem 2rem;
     grid-template-columns: 1fr; /* Switch to 1 image per row */
@@ -1052,6 +1059,10 @@ footer {
     margin: 1rem 2rem;
   }
 
+  #collapsible-image-vertical {
+    width: 100%;
+  }
+
   .collapsible-images {
     margin: 1rem 2rem;
     grid-template-columns: 1fr; /* Switch to 1 image per row */
@@ -1092,6 +1103,10 @@ footer {
   h3 {
     font-size: 1.5rem;
     margin: 1rem 4rem 1rem 2rem;
+  }
+
+  h5 {
+    margin: 1rem 2rem;
   }
 
   p,
@@ -1168,6 +1183,10 @@ footer {
 
   .collapsible-image {
     margin: 1rem 2rem;
+  }
+
+  #collapsible-image-vertical {
+    width: 100%;
   }
 
   .collapsible-images {
