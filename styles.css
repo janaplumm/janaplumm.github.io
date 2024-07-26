@@ -873,7 +873,12 @@ footer {
     margin: 1rem 2rem;
   }
 
+  .collapsible-image {
+    margin: 1rem 2rem;
+  }
+
   .collapsible-images {
+    margin: 1rem 2rem;
     grid-template-columns: 1fr; /* Switch to 1 image per row */
   }
 }
@@ -982,7 +987,12 @@ footer {
     margin: 1rem 2rem;
   }
 
+  .collapsible-image {
+    margin: 1rem 2rem;
+  }
+
   .collapsible-images {
+    margin: 1rem 2rem;
     grid-template-columns: 1fr; /* Switch to 1 image per row */
   }
 }
