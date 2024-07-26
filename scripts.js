@@ -21,16 +21,14 @@ document.querySelectorAll('.return-home').forEach(button => {
 document.addEventListener("DOMContentLoaded", function() {
   // Check if the current page is the index page
   if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
-      // Hide the 'Take me home' button by selecting the first button with the class 'return-home'
-      var navHome = document.getElementById("navHome");
-      var returnHomeButton = navHome.querySelector(".return-home");
-      returnHomeButton.style.display = "none";
+      // Hide the 'Take me home' button using its ID
+      document.getElementById("index-return-home").style.display = "none";
   }
 });
 
 // DOWNLOAD CV BUTTON
 
-document.getElementById("download-CV").addEventListener("click", function () {
+document.querySelector(".download-CV").addEventListener("click", function () {
   // Path to your CV file
   const cvFilePath = "cv/Jana-Plumm-CV-2024.pdf";
 

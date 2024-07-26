@@ -200,7 +200,7 @@ button {
 }
 
 /* Download CV button */
-#download-CV {
+.download-CV {
   background-color: #002efa;
   color: #f9f8fa;
   border: none;
@@ -213,7 +213,7 @@ button {
   overflow: hidden;
 }
 
-#download-CV:hover {
+.download-CV:hover {
   background-color: #f9f8fa;
   color: #002efa;
   box-shadow: 0px 0px 0px 2.5px #f9f8fa, 0px 0px 0px 5px #002efa,
@@ -771,8 +771,158 @@ footer {
 
 /* RESPONSIVENESS */
 
-/* Media query for extra small screens (up to 576px) */
-@media only screen and (max-width: 576px) {
+/* Media query for very small screens (up to 399px) */
+@media only screen and (max-width: 399px) {
+  /* Styles for very small screens (iPhone SE for example) */
+
+  /* Cursor */
+
+  .cursor-dot,
+  .cursor-dot-outline {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  /* Fonts */
+
+  h1 {
+    font-size: 4rem;
+    margin: 2rem 2rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin: 1rem 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 1rem 4rem 1rem 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    margin: 1rem 2rem;
+  }
+
+  p,
+  ul,
+  li {
+    font-size: 1rem;
+    margin: 1rem 2rem;
+  }
+
+  .greeting {
+    margin: 1rem 1rem 2rem 1rem;
+  }
+
+  .greetingLetter {
+    font-size: 4rem;
+  }
+
+  .greetingSpace {
+    margin: 0 0.5rem;
+  }
+
+  /* Links */
+
+  h3 a::after {
+    height: 0.2rem;
+  }
+
+  /* Buttons */
+
+  button {
+    margin: 0;
+    padding: 0.8rem 0.6rem;
+  }
+
+  #index-downloadCV {
+    padding: 0.894rem;
+  }
+
+  /* Scroll Button */
+
+  .scroll-down-indicator {
+    display: none; /* Remove scroll down indicator on mobile view */
+  }
+
+  .arrow {
+    width: 1rem;
+    height: 1rem;
+    border: 0.1rem solid #002efa;
+  }
+
+  /* About */
+
+  #aboutContent .columns {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  #aboutContent .left-column,
+  #aboutContent .right-column {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  #aboutContent .left-column {
+    order: 1; /* Ensure left column comes first */
+  }
+
+  #aboutContent .right-column {
+    order: 2; /* Ensure right column comes second */
+    margin-top: 1rem; /* Add space between columns */
+  }
+
+  .about-image-caption p {
+    margin: 0rem 4rem;
+  }
+  /* Footer */
+
+  footer {
+    padding: 1rem; /* Further decrease padding */
+  }
+
+  /* Image Grid */
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    margin: 0rem 2rem 4rem 2rem;
+  }
+
+  /* Tags */
+  .tags {
+    gap: 0.5rem;
+  }
+
+  /* Collapsibles */
+
+  .collapsible-button {
+    margin: 1rem 2rem;
+  }
+
+  .collapsible-image {
+    margin: 1rem 2rem;
+  }
+
+  .collapsible-images {
+    margin: 1rem 2rem;
+    grid-template-columns: 1fr; /* Switch to 1 image per row */
+  }
+
+  .collapsible-video {
+    margin: 1rem 2rem;
+  }
+}
+
+/* Media query for small screens (400px to 576px) */
+@media only screen and (min-width: 400px) and (max-width: 576px) {
   /* Styles for extra small screens (phones in portrait mode) */
 
   /* Cursor */
@@ -841,7 +991,6 @@ footer {
 
   button {
     margin: 0;
-    padding: 0.8rem 0.5rem;
   }
 
   /* Scroll Button */
