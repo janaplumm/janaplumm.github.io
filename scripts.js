@@ -237,7 +237,28 @@ document.querySelectorAll('.collapsible-button').forEach(button => {
       if (button.classList.contains('active')) {
           content.style.maxHeight = content.scrollHeight + 'px';
       } else {
-          content.style.maxHeight = 0;
+          content.style.maxHeight = '0';
       }
   });
 });
+
+// Force Redraw Without Affecting Collapsibles
+function handleResize() {
+  // Specific elements where redraw is needed
+  document.querySelectorAll('.collapsible-images').forEach(images => {
+    images.style.transform = 'scale(1)'; // Example of forcing redraw
+  });
+
+  // Make sure collapsible sections do not collapse automatically
+  document.querySelectorAll('.collapsible-button').forEach(button => {
+    const content = button.nextElementSibling;
+    if (button.classList.contains('active')) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+    }
+  });
+}
+
+window.addEventListener('resize', handleResize);
+
+// Initial call to ensure correct layout on load
+handleResize();

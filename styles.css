@@ -204,7 +204,8 @@ button {
 }
 
 /* Common styles for buttons */
-#return-home, #next-project {
+#return-home,
+#next-project {
   background-color: #f9f8fa;
   color: #002efa;
   border: solid #002efa;
@@ -219,8 +220,8 @@ button {
 
 /* Return Home button */
 #return-home::before {
-  content: '\2190'; /* Unicode character for left arrow */
-  font-size: 1.5rem; 
+  content: "\2190"; /* Unicode character for left arrow */
+  font-size: 1.5rem;
   position: absolute;
   left: 0.5rem; /* Space from the left edge */
   top: 50%;
@@ -245,8 +246,8 @@ button {
 
 /* Next Project button */
 #next-project::before {
-  content: '\2192'; /* Unicode character for right arrow */
-  font-size: 1.5rem; 
+  content: "\2192"; /* Unicode character for right arrow */
+  font-size: 1.5rem;
   position: absolute;
   right: 0.5rem; /* Space from the right edge */
   top: 50%;
@@ -670,6 +671,7 @@ footer {
 .collapsible-section {
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* Ensure it doesn't overflow */
 }
 
 .collapsible-button {
@@ -686,7 +688,8 @@ footer {
 }
 
 /* Change background color when active or hovered */
-.collapsible-button.active, .collapsible-button:hover {
+.collapsible-button.active,
+.collapsible-button:hover {
   background-color: #002efa;
   color: #f9f8fa;
 }
@@ -704,24 +707,38 @@ footer {
 }
 
 .collapsible-button:hover:before {
-  color: #f9f8fa; 
+  color: #f9f8fa;
 }
 
 /* Style for collapsible content */
 .collapisble-content {
   display: flex;
   flex-direction: column;
-  max-height: 0;
+  max-height: 0; /* Initially collapsed */
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  margin: 0rem 1rem;
+  transition: max-height 0.4s ease, opacity 0.4s ease; /* Smooth transition for max-height and opacity */
 }
 
-.collapsible-section img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0rem 4rem;
+.collapsible-image {
+  margin: 1rem 4rem;
+}
+
+.collapsible-image img {
+  width: 100%; /* Fills the width of the container */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes extra space below the image */
+}
+
+.collapsible-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1rem 4rem;
+}
+
+.collapsible-images img {
+  width: 100%; /* Fills the width of the container */
+  height: auto; /* Maintains aspect ratio */
 }
 
 /* RESPONSIVENESS */
@@ -855,6 +872,10 @@ footer {
   .collapsible-button {
     margin: 1rem 2rem;
   }
+
+  .collapsible-images {
+    grid-template-columns: 1fr; /* Switch to 1 image per row */
+  }
 }
 
 /* Media query for small screens (577px to 768px) */
@@ -957,9 +978,13 @@ footer {
 
   /* Collapsibles */
 
-   .collapsible-button {
+  .collapsible-button {
     margin: 1rem 2rem;
-    }
+  }
+
+  .collapsible-images {
+    grid-template-columns: 1fr; /* Switch to 1 image per row */
+  }
 }
 
 /* Media query for medium screens (769px to 992px) */
