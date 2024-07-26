@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!-- important to declare the language within the website to assist search engines and browsers -->
+<html lang="en">
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- added 'initial-scale=1.0' as this sets the initial zoom level for when the page is first loaded by the browser -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- website title -->
+  <!-- resetting the stylesheet to avoid potential inconsistencies between different web browsers -->
+  <title>Berliner Döner - Neighbourhoods</title>
+  <link rel="stylesheet" href="reset.css" media="screen" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- embedding the Barriecito and Open Sans Font Families via Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Barriecito' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+  
+<body>
+  <header class="header-nav">
+    <!-- used code provided by Jones Joseph via Codepen.io to create a purely HTML and CSS based header and navigation bar and amended it to my web design style (“Pure CSS Responsive Navbar,” n.d.) -->
+    <!-- the drop down nav menu works by making a checkbox input element that is hidden and instead covered by a kebab icon -->
+    <input type="checkbox" id="nav-check">
+    <section class="nav-logo">
+      <a aria-label="landing page link" href="index.html">
+        <!-- applied an ID attribute, because the logo is a single element -->
+        <img id="nav-logo" src="images/navbar/Logo.png" alt="Website Logo in the shape of a smiley face"></a>
+    </section>
+    <!-- kebab icon is made up of span tags that receive a border width and colour in the CSS -->
+    <section class="nav-button">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </section>
+    <!-- this link helps keyboard users skip to the main content so they don't have to jump through all navigation links before reading the content -->
+    <a class="skip-main" href="#main"><h3>Skip to main content</h3></a>
+    <nav class="nav-menu">
+      <!-- used a class attribute, as the ul element contains multiple other elements -->
+      <ul aria-label="main menu links" class="nav-link-items">
+        <li class="navbar-item"><a href="about.html"><h3>About</></h3></a></li>
+        <li class="navbar-item"><a href="spots.html"><h3>Döner Spots</h3></a></li>
+        <li class="navbar-item" id="active-item"><a href="neighbourhoods.html"><h3>Neighbourhoods</h3></a></li>
+        <li class="navbar-item"><a href="social.html"><h3>Social</h3></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- main receives an id attribute, because it is unique for the about page -->
+  <!-- adding the tabindex attribute modifies the default navigation order so keyboard users can skip the navigation link content -->
+  <main id="main" class="neighbourhoods-main" tabindex="-1">
+    <article class="neighbourhoods-heading">
+      <section class="neighbourhoods-heading-title"><h2>About Berliner Neighbourhoods</h2></section>
+      <section class="neighbourhoods-heading-text">
+        <p><b>Kiez</b> is a German word for <b>neighbourhood</b> and is most prominently used in Berlin. The traditional, immigrant Kieze are near the city centre of Berlin and <b>the biggest ethnically diverse districts</b> are found in <b>Friedrichshain-Kreuzberg</b>, <b>Mitte</b> and <b>Neukölln</b>. Many immigrants have <b>a strong connection</b> to their Kiez.</p><br>
+        <p>Below are some <b>insider tips</b> on <b>what to do</b> and <b>where to stay</b> in the Kieze!</p>
+      </section>
+    </article>
+    <article class="neighbourhoods-grid">
+    <!-- Friedrichshain-Kreuzberg Section -->
+    <!-- Split up into multiple sections underneath article tag and used the same class names for the other two Neighbourhoods in order to efficiently control the CSS and grid layout -->
+      <article class="fkreuzberg">
+        <section class="neighbourhood-title">
+           <h2>Friedrichshain-Kreuzberg</h2>
+        </section>
+        <section class="neighbourhood-do">
+          <section class="neighbourhood-do-left">
+            <section class="neighbourhood-do-left-top">
+              <figure class="neighbourhood-do-image">
+                <!-- used a unique ID for the image and figcaption in case these require individual tweaking in the CSS -->
+                <img id="fkreuzberg-do-image" src="images/neighbourhoods/kreuzberg1.jpg" alt="People shopping at the Turkish market in Friedrichshain-Kreuzberg">
+              </figure>
+            </section>
+            <section class="neighbourhood-do-left-bottom">
+              <figure>
+                <figcaption id="fkreuzberg-do-caption"><p><b>People shopping at the Turkish market in Friedrichshain-Kreuzberg</b></p></figcaption>
+              </figure>
+            </section>
+          </section>
+          <section class="neighbourhood-do-right">
+            <section class="neighbourhood-do-right-top">
+              <h3>What to do</h3>
+            </section>
+             <!-- adding this feature for accessibility when scrolling with a keyboard -->
+            <section tabindex="0" role="region" aria-labelledby="what-to-do" class="neighbourhood-do-right-bottom">
+              <ul class="neighbourhood-do-text">
+                <!-- including a link for every activity and place to stay and using the blank target attribute so that the link opens in a new window or tab, as well as a title for accessibility purposes -->
+                <li><p><b><a class="external-link" href="https://www.boboandchichi.com/2018/09/things-to-do-in-kreuzberg-berlin/" title="Blog about the Turkish Market" target="_blank">Turkish Market</a></b><p>Tuesdays and Fridays from 11 am to 6.30 pm</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.jmberlin.de/en/" title="Jewish Museum Website" target="_blank">Jewish Museum</a></b><p>Contemporary museum designed by famous American architect Daniel Libeskind </p></p></li>
+                <li><p><b><a class="external-link" href="https://www.fhxb-museum.de/" title="Friedrichshain-Kreuzberg Museum Website" target="_blank">Friedrichshain-Kreuzberg (FHXB) Museum</a></b><p>History of migration in Friedrichshain-Kreuzberg</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.berlin.de/en/attractions-and-sights/district/friedrichshain-kreuzberg/" title="Berlin Tourism Website" target="_blank">Bergmannstraße</a></b><p>A multicultural street filled with international shops</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.so36.com/tickets" title="SO36 Club Website" target="_blank">Gayhane at SO36</a></b><p>On last Saturday of each month, this club hosts an event for queer migrants wanting to listen to familiar music</p></p></li>
+              </ul>
+            </section>
+          </section>
+        </section>
+        <section class="neighbourhood-stay">
+          <section class="neighbourhood-stay-left">
+            <section class="neighbourhood-stay-left-top">
+              <figure class="neighbourhood-stay-image">
+                <img id="fkreuzberg-stay-image" src="images/neighbourhoods/kreuzberg2.jpg" alt="The famous Oberbaum Bridge at sunset">
+              </figure>
+              </section>
+            <section class="neighbourhood-stay-left-bottom">
+              <figure class="neighbourhood-stay-caption">
+                <figcaption id="fkreuzberg-stay-caption"><p><b>The famous Oberbaum Bridge at sunset</b></p></figcaption>
+              </figure>
+            </section>
+          </section>
+          <section class="neighbourhood-stay-right">
+            <section class="neighbourhood-stay-right-top">
+              <h3>Where to stay</h3>
+            </section>
+            <section tabindex="0" role="region" aria-labelledby="where-to-stay" class="neighbourhood-do-right-bottom">
+              <ul class="neighbourhood-stay-text">
+                <li><p><b><a class="external-link" href="https://www.movenpick.com/en/europe/germany/berlin/hotel-berlin.html" title="Mövenpick Hotel Website" target="_blank">Mövenpick Hotel Berlin</a></b><p>4-star hotel close to public transport with modern and stylish rooms, gym, sauna and a restaurant</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.motel-one.com/en/hotels/berlin/hotel-berlin-mitte/" title="Motel One Mitte Website" target="_blank">Motel One Mitte</a></b><p>Pet friendly hotel that lets children up to 12 years old stay for free in their parents’ room </p></p></li>
+                <li><p><b><a class="external-link" href="https://www.wil7.de/" title="Wil7 Boutique Hotel Website" target="_blank">Wil7 Boutique Hotel</a></b><p>Boutique hotel featuring classic Berliner architecture and style that offers regional and organic breakfast </p></p></li>
+                <li><p><b><a class="external-link" href="https://www.airbnb.com.au/rooms/53287157?check_in=2022-11-03&check_out=2022-11-08&guests=1&adults=1&s=67&unique_share_id=d1d6d66b-4fe4-418e-9de8-2359bb5b45ac" title="Exclusive Loft Website" target="_blank">Exclusive AirBnB Loft</a></b><p>1 bedroom trendy loft with availability to host 4 guests that comes with a swing and its own gym </p></p></li>
+              </ul>
+            </section>
+          </section>
+        </section>
+      </article>
+      <!-- Mitte Section -->
+      <article class="mitte">
+        <section class="neighbourhood-title">
+           <h2>Mitte</h2>
+        </section>
+        <section class="neighbourhood-do">
+          <section class="neighbourhood-do-left">
+            <section class="neighbourhood-do-left-top">
+              <figure class="neighbourhood-do-image">
+                <img id="mitte-do-image" src="images/neighbourhoods/mitte1.jpg" alt="People shopping at the Turkish market in Friedrichshain-Kreuzberg">
+              </figure>
+            </section>
+            <section class="neighbourhood-do-left-bottom">
+              <figure>
+                <figcaption id="mitte-do-caption"><p><b>The lively street at Haus Schwarzenberg in Mitte</b></p></figcaption>
+              </figure>
+            </section>
+          </section>
+          <section class="neighbourhood-do-right">
+            <section class="neighbourhood-do-right-top">
+              <h3>What to do</h3>
+            </section>
+            <section tabindex="0" role="region" aria-labelledby="what-to-do" class="neighbourhood-do-right-bottom">
+              <ul class="neighbourhood-do-text">
+                <li><p><b><a class="external-link" href="https://www.smb.museum/museen-einrichtungen/pergamonmuseum/home/" title="Pergamonmuseum Website" target="_blank">Pergamonmuseum</a></b><p>The museum of the ancient Near East and the museum of Islamic Art, perfect to get to know ancient Turkish history and culture</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.tadshikische-teestube.de/" title="Tadshikische Teestube Website" target="_blank">Tadshikische Teestube</a></b><p>Bohemian tearoom with a courtyard offering Russian small plates and vegan specialities</p></p></li>
+                <li><p><b><a class="external-link" href="https://haus-schwarzenberg.org/" title="Haus Schwarzenberg Website" target="_blank">Haus Schwarzenberg</a></b><p>Local history museum, niche shops and street art hotspot</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.ddr-museum.de/en" title="DDR Museum Website" target="_blank">Former East Germany (DDR) Museum</a></b><p>Immerses visitors into the former life of East Germany before the fall of the Wall in 1989</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.berlin.de/en/attractions-and-sights/district/mitte/" title="Berlin Tourism Website" target="_blank">Brandenburger Tor</a></b><p>Important symbol of the unity of Berlin and Germany and an iconic tourist spot</p></p></li>
+              </ul>
+            </section>
+          </section>
+        </section>
+        <section class="neighbourhood-stay">
+          <section class="neighbourhood-stay-left">
+            <section class="neighbourhood-stay-left-top">
+              <figure class="neighbourhood-stay-image">
+                <img id="mitte-stay-image" src="images/neighbourhoods/mitte2.jpg" alt="The famous Oberbaum Bridge at sunset">
+              </figure>
+              </section>
+            <section class="neighbourhood-stay-left-bottom">
+              <figure class="neighbourhood-stay-caption">
+                <figcaption id="mitte-stay-caption"><p><b>Sunset over the Mitte district in central Berlin</b></p></figcaption>
+              </figure>
+            </section>
+          </section>
+          <section class="neighbourhood-stay-right">
+            <section class="neighbourhood-stay-right-top">
+              <h3>Where to stay</h3>
+            </section>
+            <section tabindex="0" role="region" aria-labelledby="where-to-stay" class="neighbourhood-do-right-bottom">
+              <ul class="neighbourhood-stay-text">
+                <li><p><b><a class="external-link" href="https://www.kempinski.com/en/berlin/hotel-adlon/" title="Hotel Adlon Website" target="_blank">Hotel Adlon</a></b><p>Berlin’s most famous luxury 5 star hotel that even serves the most expensive Döner for 26 EUR, situated right next to the Brandenburg Gate</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.airbnb.co.uk/rooms/13320037?guests=1&adults=1&s=67&unique_share_id=331bd0d3-4546-4bb3-8815-af5e58f1d1ba" title="Spacious and family-friendly Apartment" target="_blank">Spacious and family-friendly Apartment</a></b><p>3 bedroom apartment with a total of 5 beds and capable of hosting up to 8 people with a multilingual host</p></p></li>
+                <li><p><b><a class="external-link" href="https://circus-berlin.de/" title="Circus Berlin Website" target="_blank">Circus Berlin</a></b><p>Hybrid hostel and hotel, great for solo travellers on a budget and even has its own microbrewery</p></p></li>
+                <li><p><b><a class="external-link" href="https://boutiquei31mitte.atberlinhotels.com/en/" title="Boutique Hotel i31 Website" target="_blank">Boutique Hotel i31</a></b><p>Elegant boutique hotel that has some rooms placed within old shipping containers on the rooftop and offers electric BMWs free of charge for guests</p></p></li>
+              </ul>
+            </section>
+          </section>
+        </section>
+      </article>
+      <!-- Neukölln Section -->
+      <article class="neukolln">
+        <section class="neighbourhood-title">
+           <h2>Neukölln</h2>
+        </section>
+        <section class="neighbourhood-do">
+          <section class="neighbourhood-do-left">
+            <section class="neighbourhood-do-left-top">
+              <figure class="neighbourhood-do-image">
+                <img id="neukolln-do-image" src="images/neighbourhoods/neukolln1.jpg" alt="People shopping at the Turkish market in Friedrichshain-Kreuzberg">
+              </figure>
+            </section>
+            <section class="neighbourhood-do-left-bottom">
+              <figure>
+                <figcaption id="neukolln-do-caption"><p><b>People enjoying a drink over Berlin's rooftops at Klunker Kranich</b></p></figcaption>
+              </figure>
+            </section>
+          </section>
+          <section class="neighbourhood-do-right">
+            <section class="neighbourhood-do-right-top">
+              <h3>What to do</h3>
+            </section>
+            <section tabindex="0" role="region" aria-labelledby="what-to-do" class="neighbourhood-do-right-bottom">
+              <ul class="neighbourhood-do-text">
+                <li><p><b><a class="external-link" href="https://barber-yard.com/en/home/" title="The Barber Yard Website" target="_blank">The Barber Yard</a></b><p>Visit this traditional and highly recommended Turkish barber shop for all your hair needs</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.mv-perske.de/schillermarkt.html" title="Schillermarkt Website" target="_blank">Schillermarkt</a></b><p>A tiny, but integral market of Neukölln that is on every Wednesday and Saturday</p></p></li>
+                <li><p><b><a class="external-link" href="http://klunkerkranich.org/" title="Klunker Kranich Website" target="_blank">Klunker Kranich</a></b><p>Two level rooftop garden that hosts everything from concerts to cinema screenings</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.mywanderlust.pl/things-to-do-in-neukolln-berlin/" title="My Wanderlust Blog" target="_blank">Sonnenallee</a></b><p>Visit this famous street in Berlin and watch the iconic German film named after it to learn more about former East Germany</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.mywanderlust.pl/things-to-do-in-neukolln-berlin/" title="My Wanderlust Blog" target="_blank">Hufeisensiedlung</a></b><p>If you're an architecture fanatic, go see the UNESCO World Heritage listed housing estate</p></p></li>
+              </ul>
+            </section>
+          </section>
+        </section>
+        <section class="neighbourhood-stay">
+          <section class="neighbourhood-stay-left">
+            <section class="neighbourhood-stay-left-top">
+              <figure class="neighbourhood-stay-image">
+                <img id="neukolln-stay-image" src="images/neighbourhoods/neukolln2.jpg" alt="The famous Oberbaum Bridge at sunset">
+              </figure>
+              </section>
+            <section class="neighbourhood-stay-left-bottom">
+              <figure class="neighbourhood-stay-caption">
+                <figcaption id="neukolln-stay-caption"><p><b>Classic old German architecture can be found all over Neukölln</b></p></figcaption>
+              </figure>
+            </section>
+          </section>
+          <section class="neighbourhood-stay-right">
+            <section class="neighbourhood-stay-right-top">
+              <h3>Where to stay</h3>
+            </section>
+            <section tabindex="0" role="region" aria-labelledby="where-to-stay" class="neighbourhood-do-right-bottom">
+              <ul class="neighbourhood-stay-text">
+                <li><p><b><a class="external-link" href="https://minimalhostel.com/en/home-english/" title="Minimal Hostel Website" target="_blank">Minimal Hostel</a></b><p>Highly rated, modern hostel that gives you slippers and bed linen, free wifi and has a shared lounge</p></p></li>
+                <li><p><b><a class="external-link" href="https://www.airbnb.com.au/rooms/45088260?check_in=2022-12-12&check_out=2022-12-17&guests=1&adults=1&s=67&unique_share_id=66a24945-71e5-418b-a238-f807eb8994ea" title="Stylish Designer Apartment" target="_blank">Stylish Designer Apartment</a></b><p>A beautiful 19th century, but modern apartment that suits a single traveler or couple with 1 bedroom</p></p></li>
+                <li><p><b><a class="external-link" href="https://huettenpalast.de/en/" title="Hüttenpalast Website" target="_blank">Hüttenpalast</a></b><p>Unique and fun accommodation that has retro-style caravans and cabins within two old factory halls</p></p></li>
+                <li><p><b><a class="external-link" href="https://berlinstyle.tripcombined.com/" title="Berlin Style Apartments Website" target="_blank">Berlin Style Apartments</a></b><p>Variously sized apartments that are close to public transport and classically furnished</p></p></li>
+              </ul>
+            </section>
+          </section>
+        </section>
+      </article>
+      <!-- Map Section -->
+      <article class="neighbourhoods-map">
+        <section class="neighbourhood-title">
+          <h2>Neighbourhoods Map</h2>
+        </section>
+        <section class="neighbourhoods-map-box">
+          <!-- Embedded this code from Tania Rascia's blog in order to avoid the user zooming into the map by accident when trying to scroll down the page (“Prevent Mouse Scroll from Zooming on Embedded Google Maps,” n.d.)-->
+          <section class="neighbourhoods-map-overlay" onclick="style.pointerEvents='none'"></section>
+          <!-- Embedded this made I created using Google My Maps -->
+          <iframe id="neighbourhoods-map-iframe" src="https://www.google.com/maps/d/embed?mid=17xwGiJvXpN-QD42qk5Xzne9HzTtib7M&ehbc=2E312F" width="100%" height="525px" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section>
+      </article>
+    </article>
+  </main>
+
+  <footer>
+    <section class="footer-contact">
+      <section class="contact-top-section">
+        <section id="contact-title" tabindex="0">
+          <h2>Contact our team</h2>
+          <h4>with any questions, comments or feedback</h4>
+          <p>*Required Fields</p>
+        </section>
+        <section class="contact-social-icons">
+          <img id="facebook-icon" src="images/social/Facebook.png" alt="Facebook Social Icon">
+          <img id="instagram-icon" src="images/social/Instagram.png" alt="Instagram Social Icon">
+          <img id="twitter-icon" src="images/social/Twitter.png" alt="Twitter Social Icon">
+        </section>  
+      </section> 
+      <!-- form element for user input assigned to two separate classes to organise horizontally -->
+      <section class="contact-form">
+        <form class="contact-form-left">
+          <label class="contact-label" for="name"><h4>Your Name*</h4></label><br>
+          <input class="contact-input" id="name" type="text" name="name"><br><br>
+          <label class="contact-label" for="email"><h4>Your Email*</h4></label><br>
+          <input class="contact-input" id="email" type="email" name="email"><br><br>
+        </form>
+        <form class="contact-form-right">
+          <label class="contact-label" for="message"><h4>Your Message*</h4></label><br>
+          <!-- text area used instead of input tag for more messaging space -->
+          <textarea id="message" name="message" rows="8" cols="40"></textarea><br><br>
+          <!-- added a clearler explanation of what the submit button does for accessibility purposes -->
+          <input id="submit-button" type="submit" id="submit" value="Submit your message">
+        </form>
+      </section>
+    </section>
+        <section class="footer-testimonials">
+          <section class="footer-testimonials-title">
+            <h2>Testimonials</h2>
+          </section>
+          <section class="footer-testimonials-items">
+            <section class="testimonial-item">
+              <h4>Mehmet, 35</h4>
+              <p>“I thought I knew the best Döner places in Berlin, but this site has helped me discover some new gems.”</p>
+            </section>
+            <section class="testimonial-item"> 
+              <h4>Vanessa, 21</h4>
+              <p>“I’m an exchange student and the information about Neukölln and the things to do has been incredibly helpful.”</p>
+            </section>
+            <section class="testimonial-item">
+              <h4>John, 40</h4>
+              <p>“My family and I visited Berlin this summer and thanks to this site learned about Turkish culture and food in Berlin.”</p>
+            </section>
+        </section>
+      </section>
+  </footer>
+</body>
+</html>

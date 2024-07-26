@@ -1,0 +1,1554 @@
+/* My Laptop Desktop Dimensions were 1512 x 775 */
+
+/* GLOBAL CSS */
+
+/* removed any default browser margin and padding to start with a clean canvas and applied border-box property to account for border and padding within the element's width and height properties */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* set the font-family and background-color within this section as to not have to repeat for each individual item later on */
+
+html, body {
+  font-family: 'Open Sans', sans-serif; 
+  background-color: #E15148;
+}
+
+/* controlled properties for headings so that heading sizes can be applied in HTML and don't have to be individually controlled for each element */
+
+h1 {
+  font-family: 'Barriecito'; 
+  /* using rem unit as this scales more responsively */
+  font-size: 7rem; 
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2rem; 
+  /* this font weight is equivalent to ExtraBold */
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1.5rem; 
+  /* this font weight is equivalent to Bold */
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.25rem; 
+  /* this font weight is equivalent to Bold */
+  font-weight: 700;
+}
+
+p {
+  font-size: 1rem; 
+  /* this font weight is equivalent to Regular */
+  font-weight: 400;
+}
+
+/* set properties for five link states that apply to all links across the website */
+/* important to have them in this order otherwise one will overwrite the other and not work */
+
+a {
+  color: black;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+  text-decoration: underline;
+}
+
+/* focus for accessibility if a person is accessing via the tab key */
+a:focus {
+  color: black;
+  text-decoration: underline;
+}
+
+/* this hides the skip to main content link and only reveals it when it detects the tab key being used for accessibility purposes */
+a.skip-main {
+  position: fixed;
+  top: 0;
+  transform: translate(100%, -100%);
+}
+
+a.skip-main:focus {
+  /* transition will add a subtle animation when this link becomes active or focused */
+  transition: transform 0.4s;
+  transform: translate(100%, 120%);
+}
+
+/* links that open up to new websites are underlined for accessibility purposes and to make it obvious to the user that this link is clickable */
+a.external-link {
+  text-decoration: underline;
+}
+
+/* link colour changes on hover to make it obvious that this is a clickable element */
+a.external-link:hover {
+  color: #E15148;
+}
+
+/* to help users scroll content even with their keyboard */
+[role][aria-labelledby][tabindex] {
+  overflow: auto;
+}
+
+/* this makes the focus area more obvious by adding a colored outline */
+[role][aria-labelledby][tabindex]:focus {
+  outline: .1rem solid blue;
+}
+
+/* NAVIGATION CSS */
+
+/* used code provided by Jones Joseph via Codepen.io to create a purely HTML and CSS based header and navigation bar and amended it to my web design style (“Pure CSS Responsive Navbar,” n.d.) */
+
+.header-nav {
+  /* using the z-index to always make the header visually override all other elements */
+  z-index: 999;
+  /* vw and vh are units that are relative to 1% width and height of the viewport */
+  max-width: 100vw;
+  height: 15vh;
+  /* adding sticky position so the header moves with the scroll motion of the user for easy access */
+  position: sticky;
+  top: 0;
+  /* applied flexbox layout as it naturally expands or shrinks items upon resize and generally has more flexibility than the regular block layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.5rem solid black;
+  background-color: #E15148;
+  overflow: hidden;
+} 
+
+#nav-logo {
+  max-width: 6rem;
+  display: flex;
+  margin: auto auto auto 2rem;
+  padding: 1rem;
+}
+
+.nav-link-items {
+  display: flex;
+  /* remove the bullet points that come with unordered lists */
+  list-style-type: none;
+  /* this tag prevents the text from wrapping upon resize */
+  white-space: nowrap;
+  gap: 3rem;
+  margin: auto 2rem auto auto;
+}
+
+/* hiding these elements, as they should only show on mobile devices  */
+.nav-button, #nav-check {
+  display: none;
+}
+
+/* ensuring that it is obvious to the user which page they are currently on  */
+#active-item {
+  text-decoration: underline;
+} 
+
+/* LANDING PAGE MAIN CSS */
+
+/* tried flexbox layout, but found grid layout easier to handle for this section in terms of creating equal-width columns */
+.landing-main {
+    display: grid;
+  /* using this method to achieve equal-width columns */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* used flexbox instead to center the content within the sections */
+.landing-left {
+  height: 80vh;
+  display: flex;
+  /* added center property on headings specifically so they remain in the center even when screen is resized */
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  /* to avoid double borders, hide one border side that overlaps with another */
+  border: 0.5rem solid black;
+  border-top: 0;
+}
+
+/* despite this being a h3 heading type, changed the font weight to regular, because parts of the text are bold */
+#landing-subtitle {
+  font-weight: 400;
+}
+
+.landing-right {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow prevents us from seeing the parts of the image that extend past the container border */
+  overflow: hidden;
+  border: 0.5rem solid black;
+  border-left: 0;
+  border-top: 0;
+}
+
+/* image sits within container as per its original scale, but has been positioned to fit in the center of the container using object-position */
+#adele-img {
+  width: 180%;
+  object-fit: contain;
+  object-position: -5rem 5rem;
+}
+
+/* ABOUT PAGE MAIN CSS */
+
+.about-grid {
+  display: grid;
+  /* using the repeat notation with auto-fit in order to match the content equally across three sections*/
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  border: 0.5rem solid black;
+}
+
+.about-heading {
+  border: 0.5rem solid black;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.about-heading-title {
+  text-align: center;
+  padding: 1rem;
+  background-color: #F9DC5C;
+  border-bottom: 0.5rem solid black;
+}
+
+.about-heading-text {
+  text-align: center;
+  padding: 1rem 8rem 1rem 8rem;
+  background-color: white;
+}
+
+.about-title {
+  text-align: center;
+  padding: 1rem;
+  border: 0.5rem solid black;
+  border-top: 0;
+  border-right: 0;
+}
+
+/* using nth-of-type to control the left border spill with the main about border */
+.about-berlin section:nth-of-type(1) {
+  border-left: 0;
+}
+
+.about-berlin figure:nth-of-type(1) {
+  border-left: 0;
+}
+
+/* using nth-of-type twice, as it is less conditional than nth-child to select the odd and even title sections to change the background colour pattern*/
+.about-grid article:nth-of-type(odd) section:nth-of-type(1) {
+  background-color: #48D8E1;
+}
+
+.about-grid article:nth-of-type(even) section:nth-of-type(1) {
+  background-color: #F9DC5C;
+}
+
+.about-image {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 0.5rem solid black;
+  border-top: 0;
+  border-right: 0;
+}
+
+/* containing the image keeps its dimensions but fills the container */
+.about-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* applying flexbox in order to center the text within the container */
+.about-image-caption {
+  text-align: center;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  border: 0.5rem solid black;
+  border-top: 0;
+  border-right: 0;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.about-berlin figure:nth-of-type(2) {
+  border-left: 0;
+}
+
+.about-grid article:nth-of-type(odd) figure:nth-of-type(2) {
+  background-color: #48D8E1;
+}
+
+.about-grid article:nth-of-type(even) figure:nth-of-type(2) {
+  background-color: #F9DC5C;
+}
+
+.about-text {
+  height: 68vh;
+  border-left: 0.5rem solid black;
+  white-space: pre-line;
+  background-color: white;
+  /* hiding the excess text that exceeds the container height and added scroll functionality so the user can still scroll within the boxes */
+  overflow: hidden scroll;
+}
+
+.about-berlin section:nth-of-type(2) {
+  border-left: 0;
+}
+
+.about-text-content {
+  padding: 0 2rem 0 2rem;
+}
+
+/* DÖNER SPOTS CSS */
+
+.spots-main {
+  height: 102vh;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 0.5rem solid black;
+  border-top: 0;
+}
+
+/* I experienced some troubles when applying height and overflow to spots-main due to the carousels and instead added two additional parts to better control this layout */
+.spots-left {
+  overflow: hidden;
+  border-right: 0.5rem solid black;
+  background-color: white;
+}
+
+.spots-right {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  overflow: hidden;
+  background-color: white;
+}
+
+.spots-map-title {
+  text-align: center;
+  padding: 1rem;
+  background-color: #48D8E1;
+}
+
+.spots-map-subtitle {
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  border: 0.5rem solid black;
+  border-left: 0;
+  border-right: 0;
+}
+
+/* embedded this code from Tania Rascia's blog in order to avoid the user zooming into the map by accident when trying to scroll down the page (“Prevent Mouse Scroll from Zooming on Embedded Google Maps,” n.d.). I was unable to make it work using vh as a unit, so resorted to the default px. */
+.spots-map-overlay {
+  position: relative;
+  width: 100%;
+  height: 610px;
+  top: 610px;
+  margin-top: -610px;
+  z-index: 1;
+}
+
+.spots-top {
+  border-right: 0.5rem solid black;
+}
+
+/* used the code provided by Jennifer Wjertzoch for an accessible CSS-only carousel from her article on Medium and changed it to fit my design patterns and layout (Wjertzoch, 2021). */
+
+.spots-carousel {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* the below two sections control the carousel movement by using a hidding scrollbar that snaps to the item before or after the active one */
+.slides {
+  display: flex;        
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  background-color: white;
+}
+
+/* using webkit determines that this will work on multiple different browsers */
+.slides::-webkit-scrollbar {
+  display: none;
+}
+
+.slides-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  position: relative;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform .5s;
+}
+
+.spots-top .slides-item {
+  border-left: 0;
+}
+
+.spots-top-heading, .spots-rising-heading {
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 0.5rem solid black;
+}
+
+.spots-top-heading {
+  background-color: #F9DC5C;
+  border-left: 0;
+}
+
+.spots-rising-heading {
+  background-color: #48D8E1;
+}
+
+.spots-top-subtitle, .spots-rising-subtitle {
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 0.5rem solid black;
+}
+          
+/* using absolute positioning to place the number in the top left corner over the image */
+.slides-item-number {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  border: 0.5rem solid black;
+  border-top: 0;
+  border-left: 0;
+}
+
+.top-slides-item-number {
+  background-color: #F9DC5C;
+  padding: 0.5rem;
+}
+
+.rising-slides-item-number {
+  background-color: #48D8E1;
+  padding: 0.5rem;
+}
+
+.slides-image {
+  height: 30vh;
+  overflow: hidden;
+  border-bottom: 0.5rem solid black;
+}
+
+.slides-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* individually amending the positions and sizes of the images that don't immediately fit into their container */
+#slides-image-3 {
+  width: 220%;
+  object-position: -10rem -2rem;
+}
+
+#slides-image-4 {
+  object-position: 0rem -10rem;
+}
+
+#slides-image-7 {
+  width: 150%;
+  object-position: -5rem -15rem;
+}
+
+#slides-image-10 {
+  width: 130%;
+  object-position: -5rem -10rem;
+}
+
+.slides-text {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.slides-subtitle {
+  padding: 0.5rem 0rem 0rem 0rem;
+}
+
+.slides-paragraph {
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+/* styling the carousel navigation underneath the carousel, which help the user navigate the carousel sliders */
+.spots-carousel-nav {
+  padding: 1.25rem .5rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: white;
+}
+
+/* styling the individual navigation sliders within the carousel navigation */
+.slider-nav {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  border: 0.3rem solid black;
+  /* this gives them a fully round appearance */
+  border-radius: 50%;
+}
+
+.spots-top .slider-nav, .spots-rising .slider-nav:hover {
+  background-color: #F9DC5C;
+}
+
+.spots-rising .slider-nav, .spots-top .slider-nav:hover {
+  background-color: #48D8E1;
+}
+
+.spots-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deals-button, .recommend-button {
+  width: 18rem;
+  height: 3rem;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 1rem; 
+  font-weight: 700;
+  border: 0.3rem solid black;
+  border-radius: 1rem;
+  /* changes the appearance of the cursor when hovering over to indicate this is clickable */
+  cursor: pointer;
+}
+
+/* changing the colour of the buttons on hover motion to make it obvious this is a clickable element */
+.deals-button, .recommend-button:hover {
+  background-color: #F9DC5C;
+}
+
+.recommend-button, .deals-button:hover {
+  background-color: #48D8E1;
+}
+
+/* NEIGHBOURHOODS CSS */
+
+.neighbourhoods-heading {
+  border: 0.5rem solid black;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.neighbourhoods-heading-title {
+  text-align: center;
+  padding: 1rem;
+  background-color: #F9DC5C;
+  border-bottom: 0.5rem solid black;
+}
+
+.neighbourhoods-heading-text {
+  text-align: center;
+  padding: 1rem 18rem 1rem 18rem;
+  background-color: white;
+  border-bottom: 0.5rem solid black;
+}
+
+.neighbourhood-title {
+  text-align: center;
+  padding: 1rem;
+  background-color: #48D8E1;
+  border: 0.5rem solid black;
+  border-top: 0;
+}
+
+.neighbourhood-do, .neighbourhood-stay {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.neighbourhood-do-left, .neighbourhood-stay-left  {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 0.5rem solid black;
+  border-top: 0;
+}
+
+.neighbourhood-do-left-top, .neighbourhood-stay-left-top {
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.neighbourhood-do-left-top img, .neighbourhood-stay-left-top img {
+  width: 110%;
+  object-fit: contain;
+}
+
+#fkreuzberg-stay-image {
+  width: 200%;
+  object-position: -30rem 0rem;
+}
+
+.neighbourhood-do-left-bottom, .neighbourhood-stay-left-bottom {
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+  background-color: #F9DC5C; 
+  outline: 0.5rem solid black;
+}
+
+.neighbourhood-do-right, .neighbourhood-stay-right {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 0.5rem solid black;
+  border-top: 0;
+  border-left: 0;
+}
+
+.neighbourhood-do-right-top, .neighbourhood-stay-right-top {
+  /* used z-index to move the subheading forward in order to fully see the element and its border*/
+  z-index: 1;
+  height: 10vh;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F9DC5C; 
+  outline: 0.5rem solid black;
+}
+
+.neighbourhood-do-right-bottom, .neighbourhood-stay-right-bottom {
+  height: 55vh;
+  background-color: white;
+  display: flex;
+  /* makes the text start at the top of the container */
+  justify-content: flex-start;
+  /* adds spacing to the lines */
+  white-space: pre-line;
+  padding: 0rem 2rem 0rem 2rem;
+  overflow: hidden scroll;
+}
+
+.neighbourhoods-map-box {
+  display: grid;
+  border: 0.5rem solid black;
+  border-top: 0;
+  background-color: white;
+}
+
+/* embedded this code from Tania Rascia's blog in order to avoid the user zooming into the map by accident when trying to scroll down the page (“Prevent Mouse Scroll from Zooming on Embedded Google Maps,” n.d.). I was unable to make it work using vh as a unit, so resorted to the default px. */
+.neighbourhoods-map-overlay {
+  position: relative;
+  width: 100%;
+  height: 525px;
+  top: 525px;
+  margin-top: -525px;
+  z-index: 1;
+}
+
+/* SOCIAL CSS */
+
+.social-main {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  border: 0.5rem solid black;
+  border-top: 0;
+}
+
+.social-left, .social-right {
+  width: 100%;
+  background-color: white;
+}
+
+.social-title, .social-subtitle {
+  padding: 1rem;
+  text-align: center;
+  border: 0.5rem solid black;
+  border-top: 0;
+  border-left: 0;
+}
+
+.social-left .social-title, .social-right-bottom .social-title {
+  background-color: #F9DC5C; 
+}
+
+.social-right .social-title {
+  border-right: 0;
+}
+
+.social-right-bottom .social-title {
+  border-top: 0.5rem solid black;
+}
+
+.social-right-top .social-title {
+  background-color: #48D8E1;
+}
+
+.social-image-grid, .social-caption-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* this makes sure the column content is stretched out equally across */
+  justify-items: stretch;
+  border-right: 0.5rem solid black;
+}
+
+.social-images {
+  /* using relative and absolute positioning in the captions to apply overlay hover effect */
+  position: relative;
+  height: 50vh;
+  outline: 0.5rem solid black;
+}
+
+.social-images img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.social-captions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+}
+
+/* using nth-child selector to change the background colour of the caption depending on whether they are odd or even */
+.social-images:nth-child(even) figcaption {
+  background-color: #48D8E1;
+}
+
+.social-images:nth-child(odd) figcaption {
+  background-color: #F9DC5C; 
+}
+
+.social-captions:hover {
+  /* once user hovers over image the caption appears and the user can click on it to reveal the person's instagram */
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.social-text {
+  margin: 2rem;
+  text-align: center;
+}
+
+.social-recommendation-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.social-input {
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 1rem; 
+  font-weight: 400;
+  border: 0.3rem solid black;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.social-input {
+  width: 20rem;
+  height: 2rem;
+}
+
+/* used the code provided by Jennifer Wjertzoch for an accessible CSS-only carousel from her article on Medium and changed it to fit my design patterns and layout (Wjertzoch, 2021). */
+
+.social-carousel {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  border: 0.5rem solid black;
+}
+
+/* the below two sections control the carousel movement by using a hidding scrollbar that snaps to the item before or after the active one */
+.social-slides {
+  display: flex;        
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  background-color: white;
+}
+
+/* using webkit determines that this will work on multiple different browsers */
+.social-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.social-slides-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  position: relative;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform .5s;
+}
+
+.social-slides-item-number {
+  text-align: center;
+  border-bottom: 0.5rem solid black;
+  background-color: #F9DC5C;
+  padding: 1rem;
+}
+
+.social-slides-image {
+  height: 20vh;
+  overflow: hidden;
+  border-bottom: 0.5rem solid black;
+}
+
+.social-slides-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.social-slides-text {
+  margin: 1rem 1rem 0rem 1rem;
+  text-align: center;
+}
+
+.social-slides-subtitle {
+  padding: 0.5rem 0rem 0rem 0rem;
+}
+
+.social-slides-paragraph {
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+.deal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+#deal-button {
+  width: 20rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 1rem; 
+  font-weight: 700;
+  background-color: #F9DC5C;
+  border: 0.3rem solid black;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.social-carousel-nav {
+  padding: 1.25rem .5rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: white;
+}
+
+.social-slider-nav {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  border: 0.3rem solid black;
+  border-radius: 50%;
+  background-color: #F9DC5C;
+}
+
+.social-slider-nav:hover {
+  background-color: #48D8E1;
+}
+
+/* FOOTER CSS */
+
+footer {
+  /* using z-index to make sure the footer is always at the top of the page layer hierachy */
+  z-index: 999;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  border: 0.5rem solid black;
+  border-top: 0;
+}
+
+.footer-contact, .footer-testimonials {
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.contact-top-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#contact-title {
+  /* line-height added to add some spacing between the main title and subtitle */
+  line-height: 3rem;
+  /* nowrap stops the text from wrapping */
+  white-space: nowrap;
+}
+
+#facebook-icon, #instagram-icon, #twitter-icon {
+  width: 5rem;
+  float: right;
+  padding: 1rem;
+  padding-top: 0;
+  cursor: pointer;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-input, textarea {
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 1rem; 
+  font-weight: 400;
+  border: 0.3rem solid black;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.contact-form #name, #email {
+  width: 20rem;
+  height: 2rem;
+}
+
+.contact-form textarea {
+  width: 20rem;
+  height: 9.65rem;
+}
+
+#submit-button {
+  width: 20rem;
+  height: 3rem;
+  margin-top: 0.38rem;
+  text-align: center;
+  font-size: 1rem; 
+  font-weight: 700;
+  background-color: #48D8E1;
+  border: 0.3rem solid black;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+#submit-button:hover {
+  background-color: #F9DC5C;
+}
+
+.footer-testimonials {
+  outline: 0.5rem solid black;
+}
+
+.footer-testimonials-title {
+  padding-left: 1.2rem;
+}
+
+.footer-testimonials-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.testimonial-item {
+  width: 40rem;
+  height: 7rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  /* margin top only affected to create space between each testimonial */
+  margin-top: 1rem;
+  border: 0.3rem solid black;
+  border-radius: 1rem;
+}
+
+.testimonial-item p {
+  text-align: center;
+  line-height: 2rem;
+  padding: 0rem 5rem 0rem 5rem;
+}
+
+/* child selectors applied to p and div elements to alternate colour scheme and font weight */
+.footer-testimonials-items section:nth-child(odd) {
+  background-color: #F9DC5C;
+}
+
+.footer-testimonials-items section:nth-child(even) {
+  background-color: #48D8E1;
+}
+
+/* RESPONSIVENESS */
+
+/* when the screen is resized to less than or equal to 90rem, which is 1440px, the following attributes apply */
+@media screen and (max-width: 90rem) {
+  /* the properties below affect the about page responsiveness */
+
+  /* changing the left and right padding to spread it out more across the container */
+  .about-heading-text {
+    padding: 1rem 15rem 1rem 15rem;
+  }
+
+  #about-doner-img {
+    width: 120%;
+    object-position: 1rem 0rem;
+  }
+  
+  /* the properties below affect the döner spots page responsiveness */
+  .spots-main {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .spots-left {
+    border-right: 0;
+  }
+  
+  .spots-right {
+    height: auto;
+  }
+
+  .spots-top-heading, .spots-rising-heading {
+    text-align: center;
+    padding: 1rem;
+    border-top: 0.5rem solid black;
+  }
+
+  .slides-image {
+    height: 50vh;
+  }
+
+  .slides-image img {
+    width: 120%;
+    object-position: -5rem -5rem;
+  }
+
+  #slides-image-3 {
+    width: 200%;
+    object-position: -15rem 0rem;
+  }  
+
+  #slides-image-7 {
+    object-position: -10rem -40rem;
+  }
+
+  #slides-image-10 {
+    object-position: -8rem -20rem;
+  }
+
+  /* the properties below affect the neighbourhood page responsiveness */
+
+  .neighbourhood-do-left-bottom, .neighbourhood-stay-left-bottom {
+    height: 8vh;
+  }
+
+  .neighbourhood-do-right-top, .neighbourhood-stay-right-top {
+    height: 8vh;
+  }
+
+  #mitte-do-image {
+    width: 120%;
+  }
+  
+  /* the properties below affect the social page responsiveness */
+
+  .social-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-right: 0;
+  }
+
+  .social-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-right: 0.5rem solid black;
+  }
+
+  .social-right-top {
+    border-right: 0.5rem solid black;
+  }
+
+  .social-images {
+    height: 80vh;
+  }
+
+  .social-title {
+    border-top: 0.5rem solid black;
+  }
+
+  /* removing the border from the top most title element, as it clashes with the header bottom border*/
+  .social-left .social-title {
+    border-top: 0;
+  }
+  
+  /* the properties below affect the footer responsiveness */
+  
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-top-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .footer-testimonials-title {
+    padding: 0;
+    text-align: center;
+  }
+
+  .testimonial-item {
+    width: 25rem;
+    height: 10rem;
+  } 
+
+  .testimonial-item p {
+    padding: 0rem 1rem 0rem 1rem;
+  }
+}
+
+/* when the screen is resized to less than or equal to 60rem, which is 960px, the following attributes apply */
+@media screen and (max-width: 60rem) {  
+  /* the properties below affect the global responsiveness */
+  h1 {
+    font-size: 6.5rem; 
+  }
+
+  h2 {
+    font-size: 1.75rem; 
+  }
+
+  h3 {
+    font-size: 1.25rem; 
+  }
+
+  h4 {
+    font-size: 1rem; 
+  }
+
+  /* the properties below affect the main landing page responsiveness */
+  .landing-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+  
+  .landing-right {
+    border-left: 0.5rem solid black;
+  }  
+
+  #adele-img {
+    object-position: -5rem 5rem;
+  }
+
+  /* the properties below affect the about page responsiveness */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .about-heading-text {
+    padding: 1rem 5rem 1rem 5rem;
+  }
+
+  .about-title {
+    border-top: 0.5rem solid black;
+    border-left: 0;
+  }
+  
+  .about-berlin section:nth-of-type(1) {
+    border-top: 0;
+  }
+  
+  .about-image {
+    height: 50vh;
+    border-left: 0;
+  }
+
+  .about-image-caption {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  /* adjusting the positioning of the individual images */
+  #about-doner-img, #about-turkey-img {
+    object-position: 0rem -5rem;
+  }
+
+  .about-text {
+    height: auto;
+    border: 0;
+  }
+
+  .about-berlin section:nth-of-type(2) {
+    border: 0;
+  }
+
+  /* the properties below affect the döner spots page responsiveness */
+
+  .slides-image {
+    height: 40vh;
+  }
+  
+  .slides-image img {
+    object-position: -3rem 0rem;
+  }
+
+  #slides-image-3 {
+    width: 250%;
+    object-position: -15rem 0rem;
+  }  
+
+  #slides-image-7 {
+    object-position: -6rem -20rem;
+  }
+
+  #slides-image-10 {
+    object-position: -8rem -10rem;
+  }
+
+  /* the properties below affect the neighbourhoods page responsiveness */
+
+  .neighbourhoods-heading-text {
+    padding: 1rem;
+  }
+  
+  .neighbourhood-do, .neighbourhood-stay {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .neighbourhood-do-right, .neighbourhood-stay-right {
+    border-left: 0.5rem solid black;
+    border-top: 0;
+  }
+
+  .neighbourhood-do-left-top, .neighbourhood-stay-left-top {
+    height: 40vh;
+    justify-content: flex-start;
+  }
+  
+  .neighbourhood-do-left-bottom, .neighbourhood-stay-left-bottom {
+    background-color: #48D8E1; 
+  }
+
+  .neighbourhood-do-right-bottom, .neighbourhood-stay-right-bottom {
+    height: auto;
+  }
+
+  #neukolln-do-image {
+    width: 150%;
+    object-position: 0rem 0rem;
+  }
+
+  /* the properties below affect the social page responsiveness */
+  
+    .social-images {
+    height: 60vh;
+  }
+
+  /* the properties below affect the footer responsiveness */
+  
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* when the screen is resized to less than or equal to 25rem, which is 400px, the following attributes apply */
+@media screen and (max-width: 25rem) {
+  /* the properties below affect the global responsiveness */
+  
+  /* font-size is decreased with smaller screen size */
+  h1 {
+    font-size: 5rem; 
+  }
+
+  h2 {
+    font-size: 1.5rem; 
+  }
+
+  h3 {
+    font-size: 1.125rem; 
+  }
+
+  /* changing the overflow to visible in order to see the whole nav menu */
+  .header-nav {
+    overflow: visible;
+  }
+
+  #nav-logo {
+    margin: 0;
+  }
+
+  .nav-button {
+    display: inline-flex;
+  }
+
+  /* select all label elements within the nav-button parent element */
+  .nav-button > label {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 2rem;
+  }
+
+  /* gives the kebab menu icon a different background shade so it is clear to the user that they have clicked on it */
+  .nav-button > label:hover,
+  #nav-check:checked ~ .nav-button > label > span {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  /* determines the look of the kebab menu icon */
+  .nav-button > label > span {
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.1rem;
+    background-color: black;
+    border: 0.3rem solid black;
+    border-radius: 50%;
+  }
+
+  /* styles the drop down menu */
+  .nav-menu {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 6rem;
+    transition: all 0.3s ease;
+    overflow-y: hidden;
+    border-bottom: 0.5rem solid black;
+    background-color:  #E15148;
+  }
+
+  /* determines the layout of the menu items */
+  .nav-link-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* flex-start moves items to the top of the page */
+    justify-content: flex-start;
+    margin: 2rem;
+  }
+
+  /* this hides the drop down menu if the check box (kebab icon) has not been checked by the user */
+  #nav-check:not(:checked) ~ .nav-menu {
+    display: none;
+  }
+
+  /* the properties below affect the main landing page responsiveness */
+
+  .landing-left {
+    height: 50vh;
+    padding: 2rem;
+  }
+  
+  .landing-right {
+    height:50vh;
+  }  
+
+  #adele-img {
+    object-position: -5rem 0rem;
+  }
+  
+  /* the properties below affect the about page responsiveness */
+  
+  .about-heading-text {
+    padding: 1rem;
+  }
+
+  .about-image {
+    height: 30vh;
+  }
+
+  #about-doner-img, #about-turkey-img {
+    width: 120%;
+    object-position: 1rem 0rem;
+  }
+    
+  /* the properties below affect the döner spots page responsiveness */
+    
+  .spots-right {
+    height: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .spots-top {
+    border-right: 0;
+  }
+
+  .slides-image {
+    height: 30vh;
+  }
+
+  /* the properties below affect the döner spots page responsiveness */
+
+  .slides-image img {
+    object-position: 0rem -2rem;
+  }
+
+  #slides-image-3 {
+    object-position: -10rem -5rem;
+  }  
+
+  #slides-image-7 {
+    object-position: -6rem -20rem;
+  }
+
+  #slides-image-10 {
+    object-position: -5rem -12rem;
+  }
+  
+   /* the properties below affect the neighbourhoods page responsiveness */
+
+  .neighbourhoods-heading-text {
+    padding: 1rem 2rem 1rem 2rem;
+  }
+  
+  .neighbourhood-do-left-top, .neighbourhood-stay-left-top {
+    height: 30vh;
+  }
+
+  #fkreuzberg-stay-image {
+    object-position: -20rem 0rem;
+  }
+
+    /* the properties below affect the social responsiveness */
+
+  .social-right {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .social-image-grid, .social-caption-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 50vh;
+    overflow: hidden scroll;
+  }
+
+  .social-left .social-title {
+    border-top: 0;
+  }
+
+  .social-right-top {
+    border-right: 0;
+  }
+
+  /* changing the value from 80% to 80vw makes the entire layout snap to the total viewport width, for some reason percentage was not working as expected*/ 
+  .social-carousel {
+    width: 80vw;
+  }
+  
+  /* the properties below affect the footer responsiveness */ 
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+  .contact-top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .footer-testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-item {
+    width: 20rem;
+    height: 12rem;
+  }
+
+  .testimonial-item p {
+    padding: 0rem 1rem 0rem 1rem;
+  }
+}

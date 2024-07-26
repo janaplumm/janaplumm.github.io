@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!-- important to declare the language within the website to assist search engines and browsers -->
+<html lang="en">
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- added 'initial-scale=1.0' as this sets the initial zoom level for when the page is first loaded by the browser -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- website title -->
+  <!-- resetting the stylesheet to avoid potential inconsistencies between different web browsers -->
+  <title>Berliner Döner - Spots</title>
+  <link rel="stylesheet" href="reset.css" media="screen" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- embedding the Barriecito and Open Sans Font Families via Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Barriecito' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+  
+<body>
+  <header class="header-nav">
+    <!-- used code provided by Jones Joseph via Codepen.io to create a purely HTML and CSS based header and navigation bar and amended it to my web design style (“Pure CSS Responsive Navbar,” n.d.) -->
+    <!-- the drop down nav menu works by making a checkbox input element that is hidden and instead covered by a kebab icon -->
+    <input type="checkbox" id="nav-check">
+    <section class="nav-logo">
+      <a aria-label="landing page link" href="index.html">
+        <!-- applied an ID attribute, because the logo is a single element -->
+        <img id="nav-logo" src="images/navbar/Logo.png" alt="Website Logo in the shape of a smiley face"></a>
+    </section>
+    <!-- kebab icon is made up of span tags that receive a border width and colour in the CSS -->
+    <section class="nav-button">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </section>
+    <!-- this link helps keyboard users skip to the main content so they don't have to jump through all navigation links before reading the content -->
+    <a class="skip-main" href="#main"><h3>Skip to main content</h3></a>
+    <nav class="nav-menu">
+      <!-- used a class attribute, as the ul element contains multiple other elements -->
+      <ul aria-label="main menu links" class="nav-link-items">
+        <li class="navbar-item"><a href="about.html"><h3>About</></h3></a></li>
+        <li class="navbar-item" id="active-item"><a href="spots.html"><h3>Döner Spots</h3></a></li>
+        <li class="navbar-item"><a href="neighbourhoods.html"><h3>Neighbourhoods</h3></a></li>
+        <li class="navbar-item"><a href="social.html"><h3>Social</h3></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- main receives an id attribute, because it is unique for the about page -->
+  <!-- adding the tabindex attribute modifies the default navigation order so keyboard users can skip the navigation link content -->
+  <main id="main" class="spots-main" tabindex="-1">
+    <article class="spots-left">
+      <section class="spots-map-title">
+        <h2>Döner Map</h2>
+      </section>
+      <section class="spots-map-subtitle">
+        <p>We have located the Top 5 and Rising 5 Döner spots for you on the map below. </p>
+        <p><b>Top 5</b> are marked with <b>hearts</b> and <b>Rising 5</b> with <b>stars</b>.</p>
+      </section>
+      <section class="spots-map-box" aria-label="map" Tabindex="0">
+        <!-- Embedded this code from Tania Rascia's blog in order to avoid the user zooming into the map by accident when trying to scroll down the page (“Prevent Mouse Scroll from Zooming on Embedded Google Maps,” n.d.)-->
+        <section class="spots-map-overlay" onclick="style.pointerEvents='none'"></section>
+        <!-- Embedded this made I created using Google My Maps -->
+        <iframe id="spots-map-iframe" src="https://www.google.com/maps/d/embed?mid=1UmtbNNJkxOIaC1HQD052AcUZ6-qdnG4&ehbc=2E312F" width="100%" height="610" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </section>
+    </article>
+    <article class="spots-right">
+      <article class="spots-top">
+        <section class="spots-top-heading">
+          <h2>Top 5</h2>
+        </section>
+        <section class="spots-top-subtitle">
+          <p>The five best Döner spots curated from <b>food critques</b>, <b>feedback</b> and <b>reviews</b></p>
+        </section>
+        <!-- Used the code provided by Jennifer Wjertzoch for an accessible HTML and CSS-only carousel from her article on Medium and changed it to fit my design patterns and layout (Wjertzoch, 2021). -->
+        <section class="spots-carousel" aria-label="top 5 döner spots carousel" Tabindex="0">
+          <section class="slides">
+            <section class="slides-item" id="slide-1" aria-label="slide 1 of 5" tabindex="0">
+              <figure class="slides-image">
+                <img id="slides-image-1" src="images/spots/1_Ruyam.jpeg" alt="The classic Chicken Döner at Rüyam Gemüse Kebab">
+              </figure>
+              <section class="slides-item-number">
+                <h2 class="top-slides-item-number">1</h2>
+              </section>
+              <section class="slides-text">
+                <h3 class="slides-title"><a class="external-link" href="https://rueyamdoener.de/" title="Rüyam Gemüse Kebab Website" target="_blank">Rüyam Gemüse Kebab</a></h3>
+                <h4 class="slides-subtitle">Tempelhof-Schöneberg</h4>
+                <p class="slides-paragraph">Visit the reigning Kebab King at their original restaurant in Tempelhof-Schöneberg or their newest restaurant in Prenzlauer Berg. They have meat, vegetarian and vegan options.</p>
+              </section>
+            </section>
+            <section class="slides-item" id="slide-2" aria-label="slide 2 of 5" tabindex="0">
+              <figure class="slides-image">
+                <img id="slides-image-2" src="images/spots/2_Mustafas.jpeg" alt="The iconic Chicken Döner at Mustafa’s Gemüse Kebap">
+              </figure>
+              <section class="slides-item-number">
+                <h2 class="top-slides-item-number">2</h2>
+              </section>
+              <section class="slides-text">
+                <h3 class="slides-title"><a class="external-link" href="https://www.instagram.com/mustafasgemuesekebap/?hl=en" title="Mustafa’s Gemüse Kebap Instagram" target="_blank">Mustafa’s Gemüse Kebap</a></h3>
+                <h4 class="slides-subtitle">Friedrichshain-Kreuzberg</h4>
+                <p class="slides-paragraph">A cult favourite in Berlin since 2006, this food truck is known for its huge line of locals and tourists sometimes waiting for up to 2 hours.  Mustafa’s is famous for its Chicken Döner and special secret sauce.</p>
+              </section>
+            </section>
+          <section class="slides-item" id="slide-3" aria-label="slide 3 of 5" tabindex="0">
+            <figure class="slides-image">
+              <img id="slides-image-3" src="images/spots/3_Imren.jpeg" alt="A Beef Döner at Imren Grill">
+            </figure>
+            <section class="slides-item-number">
+              <h2 class="top-slides-item-number">3</h2>
+            </section>
+            <section class="slides-text">
+              <h3 class="slides-title"><a class="external-link" href="https://imren-grill.de/" title="Imren Grill Website" target="_blank">Imren Grill</a></h3>
+              <h4 class="slides-subtitle">Friedrichshain-Kreuzberg</h4>
+              <p class="slides-paragraph">Imren opened up their first restaurant in 1993 in Friedrichshain-Kreuzberg and has since expanded to a total of six locations. They offer halal products and bake their own flatbreads.</p>
+              </section>
+          </section>
+          <section class="slides-item" id="slide-4" aria-label="slide 4 of 5" tabindex="0"> 
+            <figure class="slides-image">
+              <img id="slides-image-4" src="images/spots/4_NUR.jpeg" alt="A Chicken Döner at NUR Gemüse Kebab">
+            </figure>
+            <section class="slides-item-number">
+              <h2 class="top-slides-item-number">4</h2>
+            </section>
+            <section class="slides-text">
+              <h3 class="slides-title"><a class="external-link" href="https://nurgemuesekebap.de/" title="NUR Gemüse Kebab Website" target="_blank">NUR Gemüse Kebab</a></h3>
+              <h4 class="slides-subtitle">Neukölln</h4>
+              <p class="slides-paragraph">A favourite food truck near the Neukölln public transport stations, NUR is very proud of their Chicken Döner, but also offers a variety of vegetarian options and only uses halal certified products.</p>
+            </section>
+          </section>
+          <section class="slides-item" id="slide-5" aria-label="slide 5 of 5" tabindex="0">
+            <figure class="slides-image">
+              <img id="slides-image-5" src="images/spots/5_Voner.jpg" alt="A plant based Döner at Vöner">
+            </figure>
+            <section class="slides-item-number">
+              <h2 class="top-slides-item-number">5</h2>
+            </section>
+            <section class="slides-text">
+              <h3 class="slides-title"><a class="external-link" href="http://www.voener.de/" title="Vöner Website" target="_blank">Vöner</a></h3>
+              <h4 class="slides-subtitle">Friedrichshain-Kreuzberg</h4>
+              <p class="slides-paragraph">The first restaurant to offer vegan Döner in Germany. The homemade plant-based meat is made out of wheat protein, vegetables, soy meal, legumes and lots of herbs and spices.</p>
+            </section>
+          </section>
+        </section>
+        <section class="spots-carousel-nav">
+          <!-- these link to each slide so when the user clicks on one the carousel will shuffle around to reveal the slide as per the href link -->
+          <a class="slider-nav" href="#slide-1" aria-label="Go to slide 1"><b>1</b></a>
+          <a class="slider-nav" href="#slide-2" aria-label="Go to slide 2"><b>2</b></a>
+          <a class="slider-nav" href="#slide-3" aria-label="Go to slide 3"><b>3</b></a>
+          <a class="slider-nav" href="#slide-4" aria-label="Go to slide 4"><b>4</b></a>
+          <a class="slider-nav" href="#slide-5" aria-label="Go to slide 5"><b>5</b></a>
+        </section>
+        </section>
+        <section class="spots-button">
+          <!-- using a button tag and aria label makes this more accessible to people and the screen reader can read the aria label and button text in one sentence without repeating anything  -->
+          <a href="social.html"><button class="deals-button" aria-label="Click this to">Get Döner Deals!</button></a>
+        </section>
+    </article>
+    <article class="spots-rising">
+      <section class="spots-rising-heading">
+        <h2>Rising 5</h2>
+      </section>
+      <section class="spots-rising-subtitle">
+        <p>The five Rising Stars based on <b>your recommendations</b> and <b>our checks</b></p>
+      </section>
+      <section class="spots-carousel" aria-label="rising 5 döner spots carousel" Tabindex="0">
+        <section class="slides">
+          <section class="slides-item" id="slide-6" aria-label="slide 1 of 5" tabindex="0">
+            <figure class="slides-image">
+              <img id="slides-image-6" src="images/spots/6_Turm.jpeg" alt="The Beef Döner at Döner Turm">
+            </figure>
+            <section class="slides-item-number">
+              <h2 class="rising-slides-item-number">1</h2>
+            </section>
+            <section class="slides-text">
+              <h3 class="slides-title"><a class="external-link" href="https://doner-turm.business.site/" title="Döner Turm Website" target="_blank">Döner Turm</a></h3>
+              <h4 class="slides-subtitle">Mitte</h4>
+              <p class="slides-paragraph">This late-night snack bar is the first thing you smell as you exit the nearby subway station and is known for its friendly service. You can enjoy your Döner standing or take a seat on one of the outdoor benches. </p>
+            </section>
+          </section>
+          <section class="slides-item" id="slide-7" aria-label="slide 2 of 5" tabindex="0">
+            <figure class="slides-image">
+              <img id="slides-image-7" src="images/spots/7_Hakiki.jpeg" alt="The Beef Döner at Hakiki Döner">
+            </figure>
+            <section class="slides-item-number">
+              <h2 class="rising-slides-item-number">2</h2>
+            </section>
+            <section class="slides-text">
+              <h3 class="slides-title"><a class="external-link" href="https://www.instagram.com/hakiki.de/" title="Hakiki Döner Instagram" target="_blank">Hakiki Döner</a></h3>
+              <h4 class="slides-subtitle">Mitte</h4>
+              <p class="slides-paragraph">Get ready to wait a bit in line for this Döner, because everyone wants to get a taste of the secret homemade sauce they add. Hakkiki might be a chain, but you can expect excellent quality at any spot.</p>
+            </section>
+        </section>
+        <section class="slides-item" id="slide-8" aria-label="slide 3 of 5" tabindex="0">
+          <figure class="slides-image">
+            <img id="slides-image-8" src="images/spots/8_KWA.jpeg" alt="A fully packed Döner at Kebap With Attitude">
+          </figure>
+          <section class="slides-item-number">
+            <h2 class="rising-slides-item-number">3</h2>
+          </section>
+          <section class="slides-text">
+            <h3 class="slides-title"><a class="external-link" href="https://www.kebapyourlife.de/" title="Kebap With Attitude Website" target="_blank">Kebap With Attitude</a></h3>
+            <h4 class="slides-subtitle">Mitte</h4>
+            <p class="slides-paragraph">This contemporary restaurant has a cool vibe and is living up to Berlin’s trendy scene by adding vegan cauliflower options and craftbeer to the menu. If you’re a fan, you can buy their stylish merch.</p>
+            </section>
+        </section>
+        <section class="slides-item" id="slide-9" aria-label="slide 4 of 5" tabindex="0"> 
+          <figure class="slides-image">
+            <img id="slides-image-9" src="images/spots/9_Rosenthaler.jpeg" alt="A Chicken Döner at Rosenthaler Grill Schlemmerbuffet">
+          </figure>
+          <section class="slides-item-number">
+            <h2 class="rising-slides-item-number">4</h2>
+          </section>
+          <section class="slides-text">
+            <h3 class="slides-title"><a class="external-link" href="https://www.rosenthaler-grill.de/" title="Rosenthaler Grill Website" target="_blank">Rosenthaler Grill</a></h3>
+            <h4 class="slides-subtitle">Mitte</h4>
+            <p class="slides-paragraph">Offering a diverse culinary experience with a focus on Italian and Turkish dishes, the Rosenthaler Grill in Mitte offers a casual atmosphere where you can find something for everyone on the menu.</p>
+          </section>
+        </section>
+        <section class="slides-item" id="slide-10" aria-label="slide 5 of 5" tabindex="0">
+          <figure class="slides-image">
+            <img id="slides-image-10" src="images/spots/10_Hisar.jpeg" alt="A Chicken Döner at Hisar Fresh Food">
+          </figure>
+          <section class="slides-item-number">
+            <h2 class="rising-slides-item-number">5</h2>
+          </section>
+          <section class="slides-text">
+            <h3 class="slides-title"><a class="external-link" href="https://www.hisarfreshfood.de/" title="Hisar Fresh Food Website" target="_blank">Hisar Fresh Food</a></h3>
+            <h4 class="slides-subtitle">Friedrichshain-Kreuzberg</h4>
+            <p class="slides-paragraph">This place is one of the oldest in Berlin having opened up in 1989 after the fall of the Berlin Wall. Here you can also try Turkish classics like Lahmacun (Turkish Pizza) and Dürüm (Turkish Wrap).</p>
+          </section>
+        </section>
+        </section>
+        <section class="spots-carousel-nav">
+          <!-- these link to each slide so when the user clicks on one the carousel will shuffle around to reveal the slide as per the href link -->
+          <a class="slider-nav" href="#slide-6" aria-label="Go to slide 6"><b>1</b></a>
+          <a class="slider-nav" href="#slide-7" aria-label="Go to slide 7"><b>2</b></a>
+          <a class="slider-nav" href="#slide-8" aria-label="Go to slide 8"><b>3</b></a>
+          <a class="slider-nav" href="#slide-9" aria-label="Go to slide 9"><b>4</b></a>
+          <a class="slider-nav" href="#slide-10" aria-label="Go to slide 10"><b>5</b></a>
+        </section>
+      </section>
+      <section class="spots-button">
+        <!-- using a button tag and aria label makes this more accessible to people and the screen reader can read the aria label and button text in one sentence without repeating anything  -->
+        <a href="social.html"><button class="recommend-button" aria-label="Click this to">Recommend a Döner Spot!</button></a>
+      </section>
+      </article>
+    </article>    
+  </main>
+  
+  <footer>
+    <section class="footer-contact">
+      <section class="contact-top-section">
+        <section id="contact-title" tabindex="0">
+          <h2>Contact our team</h2>
+          <h4>with any questions, comments or feedback</h4>
+          <p>*Required Fields</p>
+        </section>
+        <section class="contact-social-icons">
+          <img id="facebook-icon" src="images/social/Facebook.png" alt="Facebook Social Icon">
+          <img id="instagram-icon" src="images/social/Instagram.png" alt="Instagram Social Icon">
+          <img id="twitter-icon" src="images/social/Twitter.png" alt="Twitter Social Icon">
+        </section>  
+      </section> 
+      <!-- form element for user input assigned to two separate classes to organise horizontally -->
+      <section class="contact-form">
+        <form class="contact-form-left">
+          <label class="contact-label" for="name"><h4>Your Name*</h4></label><br>
+          <input class="contact-input" id="name" type="text" name="name"><br><br>
+          <label class="contact-label" for="email"><h4>Your Email*</h4></label><br>
+          <input class="contact-input" id="email" type="email" name="email"><br><br>
+        </form>
+        <form class="contact-form-right">
+          <label class="contact-label" for="message"><h4>Your Message*</h4></label><br>
+          <!-- text area used instead of input tag for more messaging space -->
+          <textarea id="message" name="message" rows="8" cols="40"></textarea><br><br>
+          <!-- added a clearler explanation of what the submit button does for accessibility purposes -->
+          <input id="submit-button" type="submit" id="submit" value="Submit your message">
+        </form>
+      </section>
+    </section>
+        <section class="footer-testimonials">
+          <section class="footer-testimonials-title">
+            <h2>Testimonials</h2>
+          </section>
+          <section class="footer-testimonials-items">
+            <section class="testimonial-item">
+              <h4>Mehmet, 35</h4>
+              <p>“I thought I knew the best Döner places in Berlin, but this site has helped me discover some new gems.”</p>
+            </section>
+            <section class="testimonial-item"> 
+              <h4>Vanessa, 21</h4>
+              <p>“I’m an exchange student and the information about Neukölln and the things to do has been incredibly helpful.”</p>
+            </section>
+            <section class="testimonial-item">
+              <h4>John, 40</h4>
+              <p>“My family and I visited Berlin this summer and thanks to this site learned about Turkish culture and food in Berlin.”</p>
+            </section>
+        </section>
+      </section>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- important to declare the language within the website to assist search engines and browsers -->
+<html lang="en">
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- added 'initial-scale=1.0' as this sets the initial zoom level for when the page is first loaded by the browser -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- website title -->
+  <title>Berliner Döner - Home</title>
+  <!-- resetting the stylesheet to avoid potential inconsistencies between different web browsers -->
+  <link rel="stylesheet" href="reset.css" media="screen" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- embedding the Barriecito and Open Sans Font Families via Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Barriecito' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+  
+<body>
+  <header class="header-nav">
+    <!-- used code provided by Jones Joseph via Codepen.io to create a purely HTML and CSS based header and navigation bar and amended it to my web design style (“Pure CSS Responsive Navbar,” n.d.) -->
+    <!-- the drop down nav menu works by making a checkbox input element that is hidden and instead covered by a kebab icon -->
+    <input type="checkbox" id="nav-check">
+    <section class="nav-logo">
+      <a aria-label="landing page link" href="index.html">
+        <!-- applied an ID attribute, because the logo is a single element -->
+        <img id="nav-logo" src="images/navbar/Logo.png" alt="Website Logo in the shape of a smiley face"></a>
+    </section>
+    <!-- kebab icon is made up of span tags that receive a border width and colour in the CSS -->
+    <section class="nav-button">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </section>
+    <!-- this link helps keyboard users skip to the main content so they don't have to jump through all navigation links before reading the content -->
+    <a class="skip-main" href="#main"><h3>Skip to main content</h3></a>
+    <nav class="nav-menu">
+      <!-- used a class attribute, as the ul element contains multiple other elements -->
+      <ul aria-label="main menu links" class="nav-link-items">
+        <li class="navbar-item"><a href="about.html"><h3>About</></h3></a></li>
+        <li class="navbar-item"><a href="spots.html"><h3>Döner Spots</h3></a></li>
+        <li class="navbar-item"><a href="neighbourhoods.html"><h3>Neighbourhoods</h3></a></li>
+        <li class="navbar-item"><a href="social.html"><h3>Social</h3></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- main receives an id attribute, because it is unique for the landing page -->
+  <!-- adding the tabindex attribute modifies the default navigation order so keyboard users can skip the navigation link content -->
+  <main id="main" class="landing-main" tabindex="-1">
+    <section class="landing-left" tabindex="0">
+      <h1 id="landing-title">Berliner Döner</h1>
+      <h3 id="landing-subtitle">A <b>culinary love story</b> between Germany and Turkey</h3>
+    </section>
+    <section class="landing-right">
+      <img id="adele-img" src="images/home/Adele.jpg" alt="Artistic mural of a woman holding a Döner Kebab">
+    </section>
+  </main>
+
+  <footer>
+    <section class="footer-contact">
+      <section class="contact-top-section">
+        <section id="contact-title" tabindex="0">
+          <h2>Contact our team</h2>
+          <h4>with any questions, comments or feedback</h4>
+          <p>*Required Fields</p>
+        </section>
+        <section class="contact-social-icons">
+          <img id="facebook-icon" src="images/social/Facebook.png" alt="Facebook Social Icon">
+          <img id="instagram-icon" src="images/social/Instagram.png" alt="Instagram Social Icon">
+          <img id="twitter-icon" src="images/social/Twitter.png" alt="Twitter Social Icon">
+        </section>  
+      </section> 
+      <!-- form element for user input assigned to two separate classes to organise horizontally -->
+      <section class="contact-form">
+        <form class="contact-form-left">
+          <label class="contact-label" for="name"><h4>Your Name*</h4></label><br>
+          <input class="contact-input" id="name" type="text" name="name"><br><br>
+          <label class="contact-label" for="email"><h4>Your Email*</h4></label><br>
+          <input class="contact-input" id="email" type="email" name="email"><br><br>
+        </form>
+        <form class="contact-form-right">
+          <label class="contact-label" for="message"><h4>Your Message*</h4></label><br>
+          <!-- text area used instead of input tag for more messaging space -->
+          <textarea id="message" name="message" rows="8" cols="40"></textarea><br><br>
+          <!-- added a clearler explanation of what the submit button does for accessibility purposes -->
+          <input id="submit-button" type="submit" id="submit" value="Submit your message">
+        </form>
+      </section>
+    </section>
+        <section class="footer-testimonials">
+          <section class="footer-testimonials-title">
+            <h2>Testimonials</h2>
+          </section>
+          <section class="footer-testimonials-items">
+            <section class="testimonial-item">
+              <h4>Mehmet, 35</h4>
+              <p>“I thought I knew the best Döner places in Berlin, but this site has helped me discover some new gems.”</p>
+            </section>
+            <section class="testimonial-item"> 
+              <h4>Vanessa, 21</h4>
+              <p>“I’m an exchange student and the information about Neukölln and the things to do has been incredibly helpful.”</p>
+            </section>
+            <section class="testimonial-item">
+              <h4>John, 40</h4>
+              <p>“My family and I visited Berlin this summer and thanks to this site learned about Turkish culture and food in Berlin.”</p>
+            </section>
+        </section>
+      </section>
+  </footer>
+</body>
+</html>

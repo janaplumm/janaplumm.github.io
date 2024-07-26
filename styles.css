@@ -719,6 +719,7 @@ footer {
   transition: max-height 0.4s ease, opacity 0.4s ease; /* Smooth transition for max-height and opacity */
 }
 
+/* Style for collapsible content images */
 .collapsible-image {
   margin: 1rem 4rem;
 }
@@ -739,6 +740,21 @@ footer {
 .collapsible-images img {
   width: 100%; /* Fills the width of the container */
   height: auto; /* Maintains aspect ratio */
+}
+
+/* Style for collapsible content videos */
+.collapsible-video {
+  margin: 1rem 4rem;
+}
+
+.collapsible-video video {
+  width: 100%;
+  height: auto;
+}
+
+/* Hide download button (works on WebKit-based browsers like Chrome) */
+.video::-webkit-media-controls-download-button {
+  display: none;
 }
 
 /* RESPONSIVENESS */

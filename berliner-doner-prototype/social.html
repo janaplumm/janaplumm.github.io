@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- important to declare the language within the website to assist search engines and browsers -->
+<html lang="en">
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- added 'initial-scale=1.0' as this sets the initial zoom level for when the page is first loaded by the browser -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- website title -->
+  <!-- resetting the stylesheet to avoid potential inconsistencies between different web browsers -->
+  <title>Berliner Döner - Social</title>
+  <link rel="stylesheet" href="reset.css" media="screen" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- embedding the Barriecito and Open Sans Font Families via Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Barriecito' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+  
+<body>
+  <header class="header-nav">
+    <!-- used code provided by Jones Joseph via Codepen.io to create a purely HTML and CSS based header and navigation bar and amended it to my web design style (“Pure CSS Responsive Navbar,” n.d.) -->
+    <!-- the drop down nav menu works by making a checkbox input element that is hidden and instead covered by a kebab icon -->
+    <input type="checkbox" id="nav-check">
+    <section class="nav-logo">
+      <a aria-label="landing page link" href="index.html">
+        <!-- applied an ID attribute, because the logo is a single element -->
+        <img id="nav-logo" src="images/navbar/Logo.png" alt="Website Logo in the shape of a smiley face"></a>
+    </section>
+    <!-- kebab icon is made up of span tags that receive a border width and colour in the CSS -->
+    <section class="nav-button">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </section>
+    <!-- this link helps keyboard users skip to the main content so they don't have to jump through all navigation links before reading the content -->
+    <a class="skip-main" href="#main"><h3>Skip to main content</h3></a>
+    <nav class="nav-menu">
+      <!-- used a class attribute, as the ul element contains multiple other elements -->
+      <ul aria-label="main menu links" class="nav-link-items">
+        <li class="navbar-item"><a href="about.html"><h3>About</></h3></a></li>
+        <li class="navbar-item"><a href="spots.html"><h3>Döner Spots</h3></a></li>
+        <li class="navbar-item"><a href="neighbourhoods.html"><h3>Neighbourhoods</h3></a></li>
+        <li class="navbar-item" id="active-item"><a href="social.html"><h3>Social</h3></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- main receives an id attribute, because it is unique for the about page -->
+  <!-- adding the tabindex attribute modifies the default navigation order so keyboard users can skip the navigation link content -->
+  <main id="main" class="social-main" tabindex="-1">
+    <!-- split the social page into two sections with one being the image grid and the other the recommendations form and deals section -->
+    <article class="social-left">
+      <!-- used same names for the classes in order to amend multiple elements at once in the CSS -->
+      <section class="social-title"><h2>Döner macht schöner = Döner makes you beautiful</h2></section>
+      <section class="social-subtitle"><p>Share the love with the hashtag <b>#berlinerdönermachtschöner</b> and your next Döner could be on us!</p></section>
+      <!-- the image grid consists of 9 figures, which are made up of an image and an image caption that the user can click on to link to the original content -->
+      <section class="social-image-grid" aria-label="A nine by nine image grid">
+        <figure class="social-images">
+          <img class="social-images" id="social-image-grid-1" aria-label="Image 1" src="images/social/social1.jpg" alt="A man wearing a Döner t-shirt while eating Döner at a restaurant">
+          <figcaption class="social-captions"><p><b><a class="external-link" href="https://www.instagram.com/p/CjbCjfdtBcK/" title="Link to Instagram Photo" target="_blank">Instagram: Renato Mattar</a></b></p></figcaption>
+        </figure>
+        <figure class="social-images">
+          <img class="social-images" id="social-image-grid-2" aria-label="Image 2" src="images/social/social2.jpg" alt="A man enjoying a Döner while in the bathtub">
+          <figcaption class="social-captions"><p><b><a class="external-link" href="https://www.instagram.com/p/CIv-Pm3Hvjr/" title="Link to Instagram Photo" target="_blank">Instagram: Pat The Expat</a></b></p></figcaption>
+        </figure>
+        <figure class="social-images">
+          <img class="social-images" id="social-image-grid-3" aria-label="Image 3" src="images/social/social3.jpg" alt="An excited customer taking a selfie at a Döner shop">
+          <figcaption class="social-captions"><p><b><a class="external-link" href="https://www.instagram.com/p/CdkltRTsunk/" title="Link to Instagram Photo" target="_blank">Instagram: Asahi Ueda</a></b></p></figcaption>
+        </figure>
+        <figure class="social-images">
+          <img class="social-images" id="social-image-grid-4" aria-label="Image 4" src="images/social/social4.jpg" alt="A woman about to bite into her yummy Döner">
+          <figcaption class="social-captions"><p><b><a class="external-link" href="https://www.instagram.com/p/CYTVhVtIo9S/" title="Link to Instagram Photo" target="_blank">Instagram: Gwenda Schobert </a></b></p></figcaption>
+        </figure>
+        <figure class="social-images">
+          <img class="social-images" id="social-image-grid-5" aria-label="Image 5" src="images/social/social5.jpg" alt="A group of people enjoying Döner at a restaurant">
+        <figcaption class="social-captions"><p><b><a class="external-link" href="https://www.instagram.com/p/Ch2aY_ROs2R/" title="Link to Instagram Photo" target="_blank">Instagram: Djangos</a></b></p></figcaption>
+        </figure>
+        <figure class="social-images">
+          <img class="social-images" id="social-image-grid-6" aria-label="Image 6" src="images/social/social6.jpg" alt="A woman with sauce all over a face after digging into her Döner">
+          <figcaption class="social-captions"><p><b><a class="external-link" href="https://www.instagram.com/p/CATJwPloH77/" title="Link to Instagram Photo" target="_blank">Instagram: Evren Gezer</a></b></p></figcaption>
+        </figure>
+        <figure class="social-images">
+          <img class="social-images" id="social-image-grid-7" aria-label="Image 7" src="images/social/social7.jpg" alt="A man looking very excited about to bite into his Döner">
+          <figcaption class="social-captions"><p><b><a class="external-link" href="https://www.instagram.com/p/CYWDLSwtS4D/" title="Link to Instagram Photo" target="_blank">Instagram: Türkis - Oriental Food</a></b></p></figcaption>
+        </figure>
+        <figure class="social-images">
+          <img class="social-images" id="social-image-grid-8" aria-label="Image 8" src="images/social/social8.jpg" alt="A man smiling with a Döner by their side">
+          <figcaption class="social-captions"><p><b><a class="external-link" href="https://www.instagram.com/p/CJrRckdnWTy/" title="Link to Instagram Photo" target="_blank">Instagram: Ahmed Sharif</a></b></p></figcaption>
+        </figure>
+        <figure class="social-images">
+          <img class="social-images" id="social-image-grid-9" aria-label="Image 9" src="images/social/social9.jpg" alt="A person sensually about to bite into their Döner">
+          <figcaption class="social-captions"><p><b><a class="external-link" href="https://www.instagram.com/p/CU2kTKRKblo/" title="Link to Instagram Photo" target="_blank">Instagram: Jannis Baudelaire</a></b></p></figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <article class="social-right">
+      <article class="social-right-top" aria-label="input form for recommendations" tabindex="0">
+        <section class="social-title"><h2>Your Recommendations</h2></section>
+        <section class="social-text">
+          <h4>Do you have a favourite Döner spot?</h4>
+          <h4>Got a hot new recommendation?</h4><br>
+          <p>Let us know the name and location and we will check it out. If we love it as much as you do, it will earn a spot on the Top 5 or Rising 5 lists.</p>
+        </section>
+        <!-- re-purposed the form style from the footer -->
+        <form class="social-recommendation-form">
+          <label class="social-label" for="name"><h4>Name of the Döner Spot?*</h4></label><br>
+          <input class="social-input" id="name" type="text" name="name"><br><br>
+          <label class="social-label" for="text"><h4>Where is the Döner Spot?*</h4></label><br>
+          <input class="social-input" id="location" type="text" name="text"><br><br>
+          <input id="submit-button" type="submit" id="submit" value="Submit your message">
+        </form>
+      </article>
+      
+      <article class="social-right-bottom">
+        <section class="social-title"><h2>Döner Deals</h2></section>
+        <section class="social-text">
+          <h4>Save some cash on these insider deals, which are specially curated for you! </h4>
+        </section>
+        <!-- re-purposed the carousel code by Jennifer Wjertzoch, which was used for the spots page (Wjertzoch, 2021) -->
+        <section class="social-carousel" aria-label="döner deals carousel" tabindex="0">
+          <section class="social-slides">
+            <section class="social-slides-item" id="social-slide-1" aria-label="social slide 1 of 3" tabindex="0">
+              <section class="social-slides-item-number">
+                <h3 id="social-slides-item-number">Deal #1</h3>
+              </section>
+              <section class="social-slides-text">
+                <h3 class="social-slides-title">Double Döner Thursdays</h3>
+                <h4 class="social-slides-subtitle">Get two Döners for the price of one!</h4>
+                <p class="social-slides-paragraph">You can choose between meat, vegetarian or vegan subject to availability at any of the Top 5 Döner places all day on Thursdays!</p>
+              </section>
+            </section>
+            <section class="social-slides-item" id="social-slide-2" aria-label="social slide 2 of 3" tabindex="0">
+            <section class="social-slides-item-number">
+              <h3 id="social-slides-item-number">Deal #2</h3>
+            </section>
+            <section class="social-slides-text">
+              <h3 class="social-slides-title">Rüyam Family Deal</a></h3>
+              <h4 class="social-slides-subtitle">Kids under 12 eat for free</h4>
+              <p class="social-slides-paragraph">Bring your family anytime to <a class="external-link" href="https://rueyamdoener.de/" title="Rüyam Gemüse Kebab Website" target="_blank">Rüyam Gemüse Kebab</a> in Prenzlauer Berg and your children will get a free Döner of their choice!</p>
+              </section>
+          </section>
+            <section class="social-slides-item" id="social-slide-3" aria-label="social slide 3 of 3" tabindex="0">
+              <section class="social-slides-item-number">
+                <h3 id="social-slides-item-number">Deal #3</h3>
+              </section>
+              <section class="social-slides-text">
+                <h3 class="social-slides-title">Midnight Express</h3>
+                <h4 class="social-slides-subtitle">Half price Döner at 00:00</h4>
+                <p class="social-slides-paragraph">Before exploring Berlin's iconic nightclubs, go and grab a Döner for half price at any of the Top 5 or Rising 5 Döner spots at midnight!</p>
+              </section>
+            </section>
+        </section>
+        <section class="social-carousel-nav">
+          <!-- these link to each slide so when the user clicks on one the carousel will shuffle around to reveal the slide as per the href link -->
+          <a class="social-slider-nav" href="#social-slide-1" aria-label="Go to slide 1"><b>1</b></a>
+          <a class="social-slider-nav" href="#social-slide-2" aria-label="Go to slide 2"><b>2</b></a>
+          <a class="social-slider-nav" href="#social-slide-3" aria-label="Go to slide 3"><b>3</b></a>
+        </section>
+        </section>
+        <section class="deal-button">
+            <!-- using a button tag and aria label makes this more accessible to people and the screen reader can read the aria label and button text in one sentence without repeating anything  -->
+            <button id="deal-button" aria-label="Click this to">Get this Döner Deal</button>
+        </section>
+      </article>
+    </article>
+  </main>
+
+  <footer>
+    <section class="footer-contact">
+      <section class="contact-top-section">
+        <section id="contact-title" tabindex="0">
+          <h2>Contact our team</h2>
+          <h4>with any questions, comments or feedback</h4>
+          <p>*Required Fields</p>
+        </section>
+        <section class="contact-social-icons">
+          <img id="facebook-icon" src="images/social/Facebook.png" alt="Facebook Social Icon">
+          <img id="instagram-icon" src="images/social/Instagram.png" alt="Instagram Social Icon">
+          <img id="twitter-icon" src="images/social/Twitter.png" alt="Twitter Social Icon">
+        </section>  
+      </section> 
+      <!-- form element for user input assigned to two separate classes to organise horizontally -->
+      <section class="contact-form">
+        <form class="contact-form-left">
+          <label class="contact-label" for="name"><h4>Your Name*</h4></label><br>
+          <input class="contact-input" id="name" type="text" name="name"><br><br>
+          <label class="contact-label" for="email"><h4>Your Email*</h4></label><br>
+          <input class="contact-input" id="email" type="email" name="email"><br><br>
+        </form>
+        <form class="contact-form-right">
+          <label class="contact-label" for="message"><h4>Your Message*</h4></label><br>
+          <!-- text area used instead of input tag for more messaging space -->
+          <textarea id="message" name="message" rows="8" cols="40"></textarea><br><br>
+          <!-- added a clearler explanation of what the submit button does for accessibility purposes -->
+          <input id="submit-button" type="submit" id="submit" value="Submit your message">
+        </form>
+      </section>
+    </section>
+        <section class="footer-testimonials">
+          <section class="footer-testimonials-title">
+            <h2>Testimonials</h2>
+          </section>
+          <section class="footer-testimonials-items">
+            <section class="testimonial-item">
+              <h4>Mehmet, 35</h4>
+              <p>“I thought I knew the best Döner places in Berlin, but this site has helped me discover some new gems.”</p>
+            </section>
+            <section class="testimonial-item"> 
+              <h4>Vanessa, 21</h4>
+              <p>“I’m an exchange student and the information about Neukölln and the things to do has been incredibly helpful.”</p>
+            </section>
+            <section class="testimonial-item">
+              <h4>John, 40</h4>
+              <p>“My family and I visited Berlin this summer and thanks to this site learned about Turkish culture and food in Berlin.”</p>
+            </section>
+        </section>
+      </section>
+  </footer>
+</body>
+</html>
