@@ -136,23 +136,23 @@ li {
 
 /* LINKS */
 
-/* Default link styling */
+/* General link styles */
 a {
   color: #002efa;
   background: none;
-  text-decoration: none; /* remove underline */
-  position: relative; /* required for pseudo-element positioning */
-  transition: color 0.3s ease; /* smooth transition for color change */
-  display: inline-block; /* prevent links from breaking across lines */
+  text-decoration: none; /* Remove underline by default */
+  position: relative; /* Required for pseudo-element positioning */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  display: inline-block; /* Prevent links from breaking across lines */
 }
 
 a::after {
   content: "";
   position: absolute;
-  width: 0%; /* start with no width */
+  width: 0%; /* Start with no width */
   bottom: 0;
   left: 0;
-  height: 0.2rem; /* adjust height as needed */
+  height: 0.2rem; /* Adjust height as needed */
   background-color: #002efa;
   transition: width 0.3s ease;
 }
@@ -168,7 +168,24 @@ p a::after {
 }
 
 a:hover::after {
-  width: 100%; /* expand line to full width on hover */
+  width: 100%; /* Expand line to full width on hover */
+}
+
+/* Remove underline for links inside link-image */
+.link-image img {
+  display: block; /* Ensure no extra space around the image */
+}
+
+.link-image {
+  text-decoration: none; /* Ensure no underline for links within image area */
+}
+
+.link-image::after {
+  display: none; /* Remove underline effect */
+}
+
+.link-image:hover::after {
+  display: none; /* Ensure underline is removed on hover */
 }
 
 /* BUTTONS */
@@ -204,7 +221,7 @@ button {
 }
 
 /* Common styles for buttons */
-#return-home,
+.return-home,
 #next-project {
   background-color: #f9f8fa;
   color: #002efa;
@@ -219,7 +236,7 @@ button {
 }
 
 /* Return Home button */
-#return-home::before {
+.return-home::before {
   content: "\2190"; /* Unicode character for left arrow */
   font-size: 1.5rem;
   position: absolute;
@@ -231,7 +248,7 @@ button {
   opacity: 0; /* Initially hidden */
 }
 
-#return-home:hover {
+.return-home:hover {
   background-color: #002efa;
   color: #f9f8fa;
   box-shadow: 0px 0px 0px 2.5px #002efa, 0px 0px 0px 5px #f9f8fa,
@@ -239,7 +256,7 @@ button {
   padding-left: 3rem; /* Increased padding to make room for the arrow */
 }
 
-#return-home:hover::before {
+.return-home:hover::before {
   opacity: 1; /* Show the arrow on hover */
   left: 1rem; /* Adjust position when visible */
 }
@@ -750,11 +767,6 @@ footer {
 .collapsible-video video {
   width: 100%;
   height: auto;
-}
-
-/* Hide download button (works on WebKit-based browsers like Chrome) */
-.video::-webkit-media-controls-download-button {
-  display: none;
 }
 
 /* RESPONSIVENESS */

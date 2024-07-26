@@ -12,10 +12,11 @@ document.addEventListener('mousedown', function() {
 
 // TAKE ME HOME BUTTON
 
-document.getElementById('return-home').addEventListener('click', function() {
-  window.location.href = '/';
+document.querySelectorAll('.return-home').forEach(button => {
+  button.addEventListener('click', function() {
+      window.location.href = '/';
+  });
 });
-
 // DOWNLOAD CV BUTTON
 
 document.getElementById("download-CV").addEventListener("click", function () {
