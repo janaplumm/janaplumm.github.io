@@ -17,6 +17,17 @@ document.querySelectorAll('.return-home').forEach(button => {
       window.location.href = '/';
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Check if the current page is the index page
+  if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
+      // Hide the 'Take me home' button by selecting the first button with the class 'return-home'
+      var navHome = document.getElementById("navHome");
+      var returnHomeButton = navHome.querySelector(".return-home");
+      returnHomeButton.style.display = "none";
+  }
+});
+
 // DOWNLOAD CV BUTTON
 
 document.getElementById("download-CV").addEventListener("click", function () {
