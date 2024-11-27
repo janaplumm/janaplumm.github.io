@@ -18,6 +18,34 @@ document.querySelectorAll('.return-home').forEach(button => {
   });
 });
 
+// NEXT PROJECT BUTTON
+
+// Array of project filenames
+const projects = [
+  'project-1-terasu.html',
+  'project-2-berlinerdoner.html',
+  'project-3-countonyou.html',
+  'project-4-kasi.html'
+];
+
+// Get the current project name from the URL
+const currentProject = window.location.pathname.split('/').pop();
+
+// Get the index of the current project
+const currentIndex = projects.indexOf(currentProject);
+
+// Get the "Next project" button
+const nextProjectButton = document.getElementById('next-project');
+
+// Set the "Next project" button's link based on the current project
+if (currentIndex !== -1) {
+  // If it's the last project, go back to the first one
+  const nextIndex = (currentIndex + 1) % projects.length;
+  nextProjectButton.onclick = function() {
+      window.location.href = projects[nextIndex];
+  };
+}
+
 // DOWNLOAD CV BUTTON
 
 document.querySelector(".download-CV").addEventListener("click", function () {
