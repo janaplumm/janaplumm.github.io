@@ -489,7 +489,7 @@ nav {
 /* Header */
 
 #headerWrapper {
-  min-height: 100vh; /* Full viewport height for header */
+  min-height: 90vh; /* Full viewport height for header */
 }
 
 /* About */
