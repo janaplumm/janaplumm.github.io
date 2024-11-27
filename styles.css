@@ -489,7 +489,7 @@ nav {
 /* Header */
 
 #headerWrapper {
-  min-height: 90vh; /* Full viewport height for header */
+  padding: 1rem 1rem 10rem 1rem; /* top right bottom left */
 }
 
 /* About */
@@ -850,7 +850,7 @@ footer {
   /* Header */
 
   #headerWrapper {
-    min-height: 50vh; /* Full viewport height for header */
+    padding: 1rem 1rem 1rem 1rem; /* top right bottom left */
   }
 
   /* Scroll Button */
@@ -1005,7 +1005,7 @@ footer {
   /* Header */
 
   #headerWrapper {
-    min-height: 50vh; /* Full viewport height for header */
+    padding: 1rem 1rem 1rem 1rem; /* top right bottom left */
   }
 
   /* Scroll Button */
@@ -1143,7 +1143,7 @@ footer {
   /* Header */
 
   #headerWrapper {
-    min-height: 50vh; /* Full viewport height for header */
+    padding: 1rem 1rem 1rem 1rem; /* top right bottom left */
   }
 
   /* Scroll Button */
@@ -1263,6 +1263,8 @@ footer {
 /* Media query for large screens (993px to 1200px) */
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
   /* Styles for large screens (larger desktops and laptops) */
+
+  /* Fonts */
 
   /* Fonts */
 
