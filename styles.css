@@ -847,6 +847,12 @@ footer {
     padding: 0.8rem 0.6rem;
   }
 
+  /* Header */
+
+  #headerWrapper {
+    min-height: 50vh; /* Full viewport height for header */
+  }
+
   /* Scroll Button */
 
   .scroll-down-indicator {
@@ -996,6 +1002,12 @@ footer {
     margin: 0;
   }
 
+  /* Header */
+
+  #headerWrapper {
+    min-height: 50vh; /* Full viewport height for header */
+  }
+
   /* Scroll Button */
 
   .scroll-down-indicator {
@@ -1126,6 +1138,12 @@ footer {
 
   .greetingSpace {
     margin: 0 1rem;
+  }
+
+  /* Header */
+
+  #headerWrapper {
+    min-height: 50vh; /* Full viewport height for header */
   }
 
   /* Scroll Button */
