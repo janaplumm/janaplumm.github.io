@@ -24,8 +24,8 @@ document.querySelectorAll('.return-home').forEach(button => {
 const projects = [
   'project-1-terasu.html',
   'project-2-berlinerdoner.html',
-  'project-3-countonyou.html',
-  'project-4-kasi.html'
+  'project-3-kasi.html',
+  'project-4-msf.html'
 ];
 
 // Get the current project name from the URL
