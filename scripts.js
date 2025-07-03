@@ -50,7 +50,7 @@ if (currentIndex !== -1) {
 
 document.querySelector(".download-CV").addEventListener("click", function () {
   // Path to your CV file
-  const cvFilePath = "cv/Jana-Plumm-CV-2024.pdf";
+  const cvFilePath = "cv/Jana Plumm CV 2025.pdf";
 
   // Create an 'a' element to open the file in a new tab
   const link = document.createElement("a");
